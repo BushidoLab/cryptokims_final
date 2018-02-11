@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("button").click(function(){
+            $.getJSON("../attributes.json", function(result){
+                $.each(result, function(i, field){
+                    console.log(`result: ${result}`);
+                    console.log(`result[1]: ${result[1]}`);
+                    console.log(`field: ${field}`);
+                    console.log(`i: ${i}`);
+                    $(".one").append(`result: ${result}`);
+                    $(".two").append(`result[1]: ${result[1]}`);
+                    $(".three").append(`field: ${field}`);
+                });
+            });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button>Get JSON data</button>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+  </body>
+</html>
