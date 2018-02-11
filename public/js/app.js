@@ -55,489 +55,489 @@ var Cryptokims = {};
   };
   // Cryptokims ABI, copied after generation of contract.
   Cryptokims.ABI = [
-  	{
-  		"constant": true,
-  		"inputs": [],
-  		"name": "cfoAddress",
-  		"outputs": [
-  			{
-  				"name": "",
-  				"type": "address"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"constant": true,
-  		"inputs": [],
-  		"name": "name",
-  		"outputs": [
-  			{
-  				"name": "",
-  				"type": "string"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"constant": true,
-  		"inputs": [],
-  		"name": "ceoAddress",
-  		"outputs": [
-  			{
-  				"name": "",
-  				"type": "address"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"constant": true,
-  		"inputs": [],
-  		"name": "totalSupply",
-  		"outputs": [
-  			{
-  				"name": "",
-  				"type": "uint256"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"constant": false,
-  		"inputs": [
-  			{
-  				"name": "tokenIndex",
-  				"type": "uint256"
-  			},
-  			{
-  				"name": "sellPrice",
-  				"type": "uint256"
-  			}
-  		],
-  		"name": "sellToken",
-  		"outputs": [],
-  		"payable": false,
-  		"stateMutability": "nonpayable",
-  		"type": "function"
-  	},
-  	{
-  		"constant": true,
-  		"inputs": [],
-  		"name": "kimsCreated",
-  		"outputs": [
-  			{
-  				"name": "",
-  				"type": "uint256"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"constant": false,
-  		"inputs": [
-  			{
-  				"name": "_newCEO",
-  				"type": "address"
-  			}
-  		],
-  		"name": "setCEO",
-  		"outputs": [],
-  		"payable": false,
-  		"stateMutability": "nonpayable",
-  		"type": "function"
-  	},
-  	{
-  		"constant": false,
-  		"inputs": [
-  			{
-  				"name": "_newCOO",
-  				"type": "address"
-  			}
-  		],
-  		"name": "setCOO",
-  		"outputs": [],
-  		"payable": false,
-  		"stateMutability": "nonpayable",
-  		"type": "function"
-  	},
-  	{
-  		"constant": false,
-  		"inputs": [
-  			{
-  				"name": "howMany",
-  				"type": "uint256"
-  			}
-  		],
-  		"name": "releaseSomeKims",
-  		"outputs": [],
-  		"payable": false,
-  		"stateMutability": "nonpayable",
-  		"type": "function"
-  	},
-  	{
-  		"constant": false,
-  		"inputs": [],
-  		"name": "withdraw",
-  		"outputs": [],
-  		"payable": false,
-  		"stateMutability": "nonpayable",
-  		"type": "function"
-  	},
-  	{
-  		"constant": false,
-  		"inputs": [
-  			{
-  				"name": "_newCFO",
-  				"type": "address"
-  			}
-  		],
-  		"name": "setCFO",
-  		"outputs": [],
-  		"payable": false,
-  		"stateMutability": "nonpayable",
-  		"type": "function"
-  	},
-  	{
-  		"constant": false,
-  		"inputs": [],
-  		"name": "withdrawBalance",
-  		"outputs": [],
-  		"payable": false,
-  		"stateMutability": "nonpayable",
-  		"type": "function"
-  	},
-  	{
-  		"constant": false,
-  		"inputs": [
-  			{
-  				"name": "kimIndex",
-  				"type": "uint256"
-  			}
-  		],
-  		"name": "cancelKimAuction",
-  		"outputs": [],
-  		"payable": false,
-  		"stateMutability": "nonpayable",
-  		"type": "function"
-  	},
-  	{
-  		"constant": true,
-  		"inputs": [
-  			{
-  				"name": "",
-  				"type": "address"
-  			}
-  		],
-  		"name": "balanceOf",
-  		"outputs": [
-  			{
-  				"name": "",
-  				"type": "uint256"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"constant": true,
-  		"inputs": [],
-  		"name": "symbol",
-  		"outputs": [
-  			{
-  				"name": "",
-  				"type": "string"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"constant": false,
-  		"inputs": [
-  			{
-  				"name": "tokenIndex",
-  				"type": "uint256"
-  			}
-  		],
-  		"name": "buyKim",
-  		"outputs": [],
-  		"payable": true,
-  		"stateMutability": "payable",
-  		"type": "function"
-  	},
-  	{
-  		"constant": true,
-  		"inputs": [
-  			{
-  				"name": "",
-  				"type": "uint256"
-  			}
-  		],
-  		"name": "kims",
-  		"outputs": [
-  			{
-  				"name": "kimIndex",
-  				"type": "uint256"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"constant": false,
-  		"inputs": [
-  			{
-  				"name": "_to",
-  				"type": "address"
-  			},
-  			{
-  				"name": "_value",
-  				"type": "uint256"
-  			}
-  		],
-  		"name": "transfer",
-  		"outputs": [],
-  		"payable": false,
-  		"stateMutability": "nonpayable",
-  		"type": "function"
-  	},
-  	{
-  		"constant": true,
-  		"inputs": [],
-  		"name": "kimsOnAuction",
-  		"outputs": [
-  			{
-  				"name": "",
-  				"type": "uint256"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"constant": true,
-  		"inputs": [],
-  		"name": "averageKimSalePrice",
-  		"outputs": [
-  			{
-  				"name": "",
-  				"type": "uint256"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"constant": true,
-  		"inputs": [],
-  		"name": "cooAddress",
-  		"outputs": [
-  			{
-  				"name": "",
-  				"type": "address"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"constant": true,
-  		"inputs": [],
-  		"name": "sellerCut",
-  		"outputs": [
-  			{
-  				"name": "",
-  				"type": "uint256"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"constant": true,
-  		"inputs": [
-  			{
-  				"name": "",
-  				"type": "uint256"
-  			}
-  		],
-  		"name": "tokenToOwner",
-  		"outputs": [
-  			{
-  				"name": "",
-  				"type": "address"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"constant": true,
-  		"inputs": [
-  			{
-  				"name": "",
-  				"type": "uint256"
-  			}
-  		],
-  		"name": "tokenAuction",
-  		"outputs": [
-  			{
-  				"name": "isForSale",
-  				"type": "bool"
-  			},
-  			{
-  				"name": "tokenIndex",
-  				"type": "uint256"
-  			},
-  			{
-  				"name": "seller",
-  				"type": "address"
-  			},
-  			{
-  				"name": "sellPrice",
-  				"type": "uint256"
-  			},
-  			{
-  				"name": "startedAt",
-  				"type": "uint256"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"constant": true,
-  		"inputs": [
-  			{
-  				"name": "",
-  				"type": "address"
-  			}
-  		],
-  		"name": "pendingWithdrawals",
-  		"outputs": [
-  			{
-  				"name": "",
-  				"type": "uint256"
-  			}
-  		],
-  		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
-  	},
-  	{
-  		"inputs": [],
-  		"payable": false,
-  		"stateMutability": "nonpayable",
-  		"type": "constructor"
-  	},
-  	{
-  		"anonymous": false,
-  		"inputs": [
-  			{
-  				"indexed": true,
-  				"name": "from",
-  				"type": "address"
-  			},
-  			{
-  				"indexed": true,
-  				"name": "to",
-  				"type": "address"
-  			},
-  			{
-  				"indexed": false,
-  				"name": "value",
-  				"type": "uint256"
-  			}
-  		],
-  		"name": "Transfer",
-  		"type": "event"
-  	},
-  	{
-  		"anonymous": false,
-  		"inputs": [
-  			{
-  				"indexed": false,
-  				"name": "tokenIndex",
-  				"type": "uint256"
-  			},
-  			{
-  				"indexed": false,
-  				"name": "seller",
-  				"type": "address"
-  			},
-  			{
-  				"indexed": false,
-  				"name": "sellPrice",
-  				"type": "uint256"
-  			}
-  		],
-  		"name": "TokenAuctionCreated",
-  		"type": "event"
-  	},
-  	{
-  		"anonymous": false,
-  		"inputs": [
-  			{
-  				"indexed": false,
-  				"name": "tokenIndex",
-  				"type": "uint256"
-  			},
-  			{
-  				"indexed": false,
-  				"name": "seller",
-  				"type": "address"
-  			},
-  			{
-  				"indexed": false,
-  				"name": "buyer",
-  				"type": "address"
-  			},
-  			{
-  				"indexed": false,
-  				"name": "sellPrice",
-  				"type": "uint256"
-  			}
-  		],
-  		"name": "TokenAuctionCompleted",
-  		"type": "event"
-  	},
-  	{
-  		"anonymous": false,
-  		"inputs": [
-  			{
-  				"indexed": false,
-  				"name": "to",
-  				"type": "address"
-  			},
-  			{
-  				"indexed": false,
-  				"name": "amount",
-  				"type": "uint256"
-  			}
-  		],
-  		"name": "Withdrawal",
-  		"type": "event"
-  	}
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "cfoAddress",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "ceoAddress",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "tokenIndex",
+          "type": "uint256"
+        },
+        {
+          "name": "sellPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "sellToken",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "kimsCreated",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newCEO",
+          "type": "address"
+        }
+      ],
+      "name": "setCEO",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newCOO",
+          "type": "address"
+        }
+      ],
+      "name": "setCOO",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "howMany",
+          "type": "uint256"
+        }
+      ],
+      "name": "releaseSomeKims",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "withdraw",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newCFO",
+          "type": "address"
+        }
+      ],
+      "name": "setCFO",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "withdrawBalance",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "kimIndex",
+          "type": "uint256"
+        }
+      ],
+      "name": "cancelKimAuction",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "symbol",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "tokenIndex",
+          "type": "uint256"
+        }
+      ],
+      "name": "buyKim",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "kims",
+      "outputs": [
+        {
+          "name": "kimIndex",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "kimsOnAuction",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "averageKimSalePrice",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "cooAddress",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "sellerCut",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenToOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenAuction",
+      "outputs": [
+        {
+          "name": "isForSale",
+          "type": "bool"
+        },
+        {
+          "name": "tokenIndex",
+          "type": "uint256"
+        },
+        {
+          "name": "seller",
+          "type": "address"
+        },
+        {
+          "name": "sellPrice",
+          "type": "uint256"
+        },
+        {
+          "name": "startedAt",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "pendingWithdrawals",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "tokenIndex",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "seller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "sellPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "TokenAuctionCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "tokenIndex",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "seller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "buyer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "sellPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "TokenAuctionCompleted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Withdrawal",
+      "type": "event"
+    }
   ]
 
   // Add event listener to window, and run startApp() function
@@ -565,7 +565,7 @@ var Cryptokims = {};
 
     if (web3) {
       console.log("Found web3.");
-      var contractAddress = "0x4c45f1e8e9367d744c993d8cc123ee110325b24f"
+      var contractAddress = "0x77A6161516fB8De950e744A922E5A622676A4eE4"
       var MyContract = web3.eth.contract(Cryptokims.ABI);
       Cryptokims.kimContract = MyContract.at(contractAddress);
       Cryptokims.KimState.web3ready = true;
@@ -697,7 +697,7 @@ var Cryptokims = {};
         </button>
       </div>
       <div class="modal-body">
-        <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/Qmc89pU3J1MkBdnJsaYTii7wHWkavRsSDp43nDr1Dp7q7S/${index}.png"></img>
+        <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${index}.png"></img>
         <br>
         <p>Selling for: <strong>${value}ETH</strong></p>
       </div>
@@ -790,7 +790,7 @@ var Cryptokims = {};
                         <div class="panel panel-primary">
                           <div class="panel-heading text-center"><h3>Kim ID: #${kimIndex}</h3></div>
                           <div class="panel-body">
-                            <img class="img-responsive center-block" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/Qmc89pU3J1MkBdnJsaYTii7wHWkavRsSDp43nDr1Dp7q7S/${kimIndex}.png" alt="">
+                            <img class="img-responsive center-block" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
                           </div>
                           <div class="panel-footer">
                             <p>Sell Price: ${priceETH} ETH</p>
@@ -809,7 +809,7 @@ var Cryptokims = {};
                               <h3>Kim ID: #${kimIndex}</h3>
                             </div>
                             <div class="panel-body">
-                              <img class="img-responsive center-block" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/Qmc89pU3J1MkBdnJsaYTii7wHWkavRsSDp43nDr1Dp7q7S/${kimIndex}.png" alt="">
+                              <img class="img-responsive center-block" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
                             </div>
                             <div class="panel-footer">
                               <p>This Kim is not for sale!</p>
@@ -866,7 +866,7 @@ var Cryptokims = {};
                         <div class="col" style="float: left;width: 250px;margin: 1em;">
                           <div class="panel panel-primary">
                             <div class="panel-heading"><h3 class="text-center">kimid: #${kimIndex}</h3></div>
-                            <div class="panel-body"><img class="img-responsive center-block" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/Qmc89pU3J1MkBdnJsaYTii7wHWkavRsSDp43nDr1Dp7q7S/${kimIndex}.png" alt=""></img></div>
+                            <div class="panel-body"><img class="img-responsive center-block" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt=""></img></div>
                             <div class="panel-footer">
                               <p class="text-center">
                                 owner: ${ownerAddress}
@@ -923,7 +923,7 @@ var Cryptokims = {};
                         <h3 class="text-center">Kim: #${kimIndex}</h3>
                       </div>
                       <div class="panel-body">
-                        <img onClick="giveModalValueHome(${kimIndex})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal"src="https://gateway.ipfs.io/ipfs/Qmc89pU3J1MkBdnJsaYTii7wHWkavRsSDp43nDr1Dp7q7S/${kimIndex}.png"></img>
+                        <img onClick="giveModalValueHome(${kimIndex})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal"src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png"></img>
                       </div>
                       <div class="panel-footer">
                         <button onClick="cancelKimAuction(${kimIndex})"type="button" class="btn btn-primary center-block" style="margin-top: 9px;">Remove Listing</button>
@@ -949,7 +949,7 @@ var Cryptokims = {};
                               <h3 class="text-center">Kim: #${kimIndex}</h3>
                             </div>
                             <div class="panel-body">
-                              <img onClick="giveModalValueHome(${kimIndex})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal"src="https://gateway.ipfs.io/ipfs/Qmc89pU3J1MkBdnJsaYTii7wHWkavRsSDp43nDr1Dp7q7S/${kimIndex}.png"></img>
+                              <img onClick="giveModalValueHome(${kimIndex})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal"src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png"></img>
                             </div>
                             <div class="panel-footer"><button onClick="giveModalValue(${kimIndex})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#showKimModal" style="margin-top: 9px;">Sell this Kim!</button>
                             </div>
@@ -996,7 +996,7 @@ var Cryptokims = {};
           </button>
         </div>
         <div class="modal-body">
-          <img src="https://gateway.ipfs.io/ipfs/Qmc89pU3J1MkBdnJsaYTii7wHWkavRsSDp43nDr1Dp7q7S/${val}.png"></img>
+          <img src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
           <br>
         </div>
         <div class="modal-footer">
@@ -1023,7 +1023,7 @@ var Cryptokims = {};
     <div class="modal-body">
       <form>
         <div class="form-group">
-          <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/Qmc89pU3J1MkBdnJsaYTii7wHWkavRsSDp43nDr1Dp7q7S/${val}.png"></img>
+          <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
           <br>
           <input class="form-control" id="kim_sell_index" type="hidden" placeholder="${val}" value="${val}">
           <input class="form-control" class="center-block" id="kim_sell_price" type="number" placeholder="sell price in ETH">
@@ -1080,7 +1080,7 @@ var Cryptokims = {};
               </div>
               <div class="modal-body">
               <h3 class="text-center"></h2>
-              <img class="img-responsive center-block" style="width:50vh; height:50vh;" src="https://gateway.ipfs.io/ipfs/Qmc89pU3J1MkBdnJsaYTii7wHWkavRsSDp43nDr1Dp7q7S/${val}.png"></img>
+              <img class="img-responsive center-block" style="width:50vh; height:50vh;" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
               <h3 class="text-center">Kim O-wner: ${sellerAddress} </h2>
               <h3 class="text-center">Sale Status: ${saleStatus}</h3>
               <h3 class="text-center">Price: ${salePrice} ETH</h3>
@@ -1124,7 +1124,7 @@ var Cryptokims = {};
                       <h3 class="text-center">Kim: #${result[1]}</h3>
                     </div>
                     <div class="panel-body">
-                      <img onClick="giveModalValueHome(${result[1]})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal" src="https://gateway.ipfs.io/ipfs/Qmc89pU3J1MkBdnJsaYTii7wHWkavRsSDp43nDr1Dp7q7S/${result[1]}.png">
+                      <img onClick="giveModalValueHome(${result[1]})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${result[1]}.png">
                       </img>
                     </div>
                     <div class="panel-footer">
@@ -1241,7 +1241,7 @@ var Cryptokims = {};
                 <h3 class="text-center">Kim: #${result[1]}</h3>
               </div>
               <div class="panel-body">
-                <img class="img-responsive center-block" onClick="giveModalValueHome(${result[1]})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/Qmc89pU3J1MkBdnJsaYTii7wHWkavRsSDp43nDr1Dp7q7S/${result[1]}.png">
+                <img class="img-responsive center-block" onClick="giveModalValueHome(${result[1]})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${result[1]}.png">
                 </img>
               </div>
             </div>
