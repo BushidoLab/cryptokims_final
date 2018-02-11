@@ -1202,7 +1202,7 @@ var Cryptokims = {};
           <div class="panel-body" style="height:13vh; width:20vh">
             <!-- make this part dynamic -->
             <h4>Connected To Ethereum </h4>
-            <a href="/myKims.html"><h3>${shortUser}</h3></a>
+            <a href="/mykims.html"><h3>${shortUser}</h3></a>
           </div>
         </div>
         `
