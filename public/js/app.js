@@ -703,7 +703,7 @@ var Cryptokims = {};
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Decline</button>
-        <button onClick="buyKim(${index},${value})" type="button" class="btn btn-primary">PURCHASE</button>
+        <button onClick="buyKim(${index},${value})" type="button" class="btn btn-primary" data-dismiss="modal">PURCHASE</button>
       </div>
       `
     );
@@ -1202,7 +1202,7 @@ var Cryptokims = {};
           <div class="panel-body" style="height:13vh; width:20vh">
             <!-- make this part dynamic -->
             <h4>Connected To Ethereum </h4>
-            <a href="myKims.html"><h3>${shortUser}</h3></a>
+            <a href="/myKims.html"><h3>${shortUser}</h3></a>
           </div>
         </div>
         `
