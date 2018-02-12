@@ -634,12 +634,12 @@ var Cryptokims = {};
   function sellKim() {
     let kim_sell_id = $('#kim_sell_index').val();
     let kim_sell_price = $('#kim_sell_price').val();
-    let kim_sell_price_wei = web3.toWei(kim_sell_price, 'ether');
+    // let kim_sell_price_wei = web3.toWei(kim_sell_price, 'ether');
     let currentUser = web3.eth.coinbase;
 
     console.log(`Requesting sale on kim #${kim_sell_id} for ${kim_sell_price} ether`);
 
-    Cryptokims.kimContract.sellToken.sendTransaction(kim_sell_id, kim_sell_price_wei, function(error, result) {
+    Cryptokims.kimContract.sellToken.sendTransaction(kim_sell_id, kim_sell_price, function(error, result) {
       if (error) {
         console.log(error);
       } else {
