@@ -656,9 +656,9 @@ var Cryptokims = {};
     let kim_buy_price = price;
 
     // convert price to wei
-    // let toWei = 1000000000000000000;
-    // kim_buy_price = kim_buy_price * toWei;
-    let kim_buy_price_wei = web3.toWei(kim_buy_price, 'ether');
+    let toWei = 1000000000000000000;
+    kim_buy_price = kim_buy_price * toWei;
+    // let kim_buy_price_wei = web3.toWei(kim_buy_price, 'ether');
 
     let currentUser = web3.eth.coinbase;
 
@@ -670,7 +670,7 @@ var Cryptokims = {};
     let txnObject = {
       from: currentUser,
       gas: '4000000',
-      value: kim_buy_price_wei
+      value: kim_buy_price
     };
 
 
@@ -1263,6 +1263,30 @@ var Cryptokims = {};
   // ========================================================================================================
   // ========================================================================================================
   // ========================================================================================================
+
+
+  // get the balance of the current user wallet
+  function getBalance() {
+  let currentUser = web3.eth.coinbase;
+  Cryptokims.kimContract.pendingWithdrawals(currentUser, function(error, result){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(error);
+    }
+  })
+  }
+
+
+
+
+
+
+
+
+
+
+
 
 
   // new functions i created that are working hardcoded.
