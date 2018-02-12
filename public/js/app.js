@@ -776,7 +776,7 @@ var Cryptokims = {};
               var kimIndex = result[1];
               var ownerAddress = result[2];
               var priceETH = result[3];
-              priceETH = web3.fromWei(priceETH. 'ether');
+              priceETH = web3.fromWei(priceETH, 'ether');
               var blockNum = result[4]['c'][0];
 
               Cryptokims.kimContract.tokenToOwner.call(i, function(error,result) {
@@ -856,7 +856,7 @@ var Cryptokims = {};
                 var kimIndex = result[1];
                 var ownerAddress = result[2];
                 var priceETH = result[3];
-                priceETH = web3.fromWei(priceETH. 'ether');
+                priceETH = web3.fromWei(priceETH, 'ether');
                 var blockNum = result[4]['c'][0];
 
                 Cryptokims.kimContract.tokenToOwner.call(i, function(error,result) {
