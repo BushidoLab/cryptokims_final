@@ -565,7 +565,7 @@ var Cryptokims = {};
 
     if (web3) {
       console.log("Found web3.");
-      var contractAddress = "0x77A6161516fB8De950e744A922E5A622676A4eE4"
+      var contractAddress = "0x82C7a0C5e9c8c435dF21e00EecEa76106054FBf8"
       var MyContract = web3.eth.contract(Cryptokims.ABI);
       Cryptokims.kimContract = MyContract.at(contractAddress);
       Cryptokims.KimState.web3ready = true;
