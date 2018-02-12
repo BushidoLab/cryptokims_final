@@ -658,7 +658,7 @@ var Cryptokims = {};
     // convert price to wei
     let toWei = 1000000000000000000;
     kim_buy_price = kim_buy_price * toWei;
-    kim_buy_price = web3.fromWei(kim_buy_price, 'ether')
+    kim_buy_price = web3.fromWei(kim_buy_price, 'ether');
     // let kim_buy_price_wei = web3.toWei(kim_buy_price, 'ether');
 
     let currentUser = web3.eth.coinbase;
