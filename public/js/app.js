@@ -868,7 +868,7 @@ var Cryptokims = {};
                             <div class="panel-heading"><h3 class="text-center">kimid: #${kimIndex}</h3></div>
                             <div class="panel-body"><img class="img-responsive center-block" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt=""></img></div>
                             <div class="panel-footer">
-                              <p class="text-center">
+                              <p class="text-center" style="overflow:hidden">
                                 owner: ${ownerAddress}
                                 price: ${priceETH} eth
                               </p>

@@ -21,3 +21,7 @@
   height: 50px;
   padding: 11px 20px;
 }
+
+.text-center{
+  overflow: hidden;
+}
