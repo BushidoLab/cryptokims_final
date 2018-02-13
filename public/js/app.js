@@ -1078,7 +1078,9 @@ var Cryptokims = {};
         var saleStatus = result[0];
         var kimIndex = result[1]['c'][0];
         var salePrice = result[3];
-        salePrice = salePrice.toPrecision(6);
+        // salePrice = salePrice.toPrecision(6);
+
+        var value = web3.fromWei(salePrice, 'ether');
         console.log(result[3]);
 
         Cryptokims.kimContract.tokenToOwner.call(kimIndex, function(error,result) {
@@ -1100,9 +1102,9 @@ var Cryptokims = {};
               <div class="modal-body">
               <h3 class="text-center"></h2>
               <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
-              <h3 class="text-center">Kim O-wner: ${sellerAddress} </h2>
+              <h3 class="text-center">Kim Owner: ${sellerAddress} </h2>
               <h3 class="text-center">Sale Status: ${saleStatus}</h3>
-              <h3 class="text-center">Price: ${salePrice} ETH</h3>
+              <h3 class="text-center">Price: ${value} ETH</h3>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -1381,7 +1383,7 @@ var Cryptokims = {};
                     <div class="panel panel-primary">
                       <div class="panel-heading text-center"><h3>Kim ID: #${kimIndex}</h3></div>
                       <div class="panel-body">
-                        <img class="img-responsive center-block" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
+                        <img class="img-responsive center-block" onClick="giveModalValueHome(${i+amount})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
                       </div>
                       <div class="panel-footer" style="height:60px;">
                         <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#exampleModalCenter">Purchase</button>
@@ -1400,7 +1402,7 @@ var Cryptokims = {};
                           <h3>Kim ID: #${kimIndex}</h3>
                         </div>
                         <div class="panel-body">
-                          <img class="img-responsive center-block" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
+                          <img class="img-responsive center-block" onClick="giveModalValueHome(${i+amount})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
                         </div>
                         <div class="panel-footer" style="height:60px;">
                           <button type="button" class="btn btn-primary btn-small center-block" disabled>Purchase</button>
@@ -1447,7 +1449,7 @@ var Cryptokims = {};
                     <div class="panel panel-primary">
                       <div class="panel-heading text-center"><h3>Kim ID: #${kimIndex}</h3></div>
                       <div class="panel-body">
-                        <img class="img-responsive center-block" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
+                        <img class="img-responsive center-block" onClick="giveModalValueHome(${i+amount})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
                       </div>
                       <div class="panel-footer" style="height:60px;">
                         <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#exampleModalCenter">Purchase</button>
@@ -1466,7 +1468,7 @@ var Cryptokims = {};
                           <h3>Kim ID: #${kimIndex}</h3>
                         </div>
                         <div class="panel-body">
-                          <img class="img-responsive center-block" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
+                          <img class="img-responsive center-block" onClick="giveModalValueHome(${i+amount})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
                         </div>
                         <div class="panel-footer" style="height:60px;">
                           <button type="button" class="btn btn-primary btn-small center-block" disabled>Purchase</button>
@@ -1483,9 +1485,9 @@ var Cryptokims = {};
       });
     }
   }
+
 function kimPagination(){
   var paginationTag = $('.pagination');
-
 
   Cryptokims.kimContract.kimsCreated(function(error, result) {
     if (error) {
