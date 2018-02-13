@@ -15,8 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Kim Jong Crypto</title>
-    <link rel="stylesheet" href="/css/marketplace_style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -38,11 +38,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="/">Home <span class="sr-only">(current)</span></a></li>
         <!-- <li><a href="mykims.html">Your Kims</a></li> -->
-        <li class="active"><a href="kimsForSale.html">Kims For Sale</a></li>
-        <li ><a href="searchForKim.html">Search</a></li>
-        <li><a href="mykims.html" id="your-kims-tab">Your Kims</a></li>
+        <li class="active"><a href="/kimsForSale">Kims For Sale</a></li>
+        <li ><a href="/search">Search</a></li>
+        <li><a href="/myKims" id="your-kims-tab">Your Kims</a></li>
         <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -63,7 +63,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form> -->
       <ul class="nav navbar-nav navbar-right">
-        
+
         <li id="total-kims-created"></li>
         <li id="total-kims-on-auction"></li>
         <!-- <li><a href="#">Link</a></li>
@@ -108,6 +108,19 @@
         </div>
       </div>
     </div>
+
+
+    <footer class="kim-footer" style="margin-top: 2em;">
+      <p>
+        KimJongCrypto.com by <a href="http://www.bushidolab.com">BushidoLab </a>
+      </p>
+      <p>
+        <a href="#">Terms and conditions</a>
+      </p>
+      <p>
+        <a href="#">FAQ</a>
+      </p>
+    </footer>
     <!-- <button onClick="transferToSam()" class="btn btn-default btn-adopt" type="button">Transfer</button> -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

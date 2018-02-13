@@ -540,6 +540,14 @@ var Cryptokims = {};
     }
   ]
 
+
+
+  function sayHi(){
+    console.log('hi');
+    var html = $('html');
+    html.html("");
+    html.append(`<h1> you dont have meta mask installed, you cant see the kims :( </h1>`);
+  }
   // Add event listener to window, and run startApp() function
   window.addEventListener('load', function() {
     console.log("LOAD EVENT");
@@ -552,9 +560,12 @@ var Cryptokims = {};
       web3 = new Web3(web3.currentProvider);
       window.web3 = web3;
     } else {
+      sayHi();
       console.log("- Didn't find web3, using fallback");
       window.web3 = new Web3(new Web3.providers.HttpProvider("https://localhost:8545"));
       Cryptokims.KimState.web3UsingInfura = true;
+
+
     }
     Cryptokims.KimState.web3Queried = true;
     startApp();
@@ -581,6 +592,7 @@ var Cryptokims = {};
       totalKimsCreated();
       totalKimsOnAuction();
       getUserAccount();
+      kimPagination();
       // hideAccountTab();
 
       let events = Cryptokims.kimContract.allEvents({fromBlock: 1615044, toBlock: 'latest'});
@@ -617,7 +629,7 @@ var Cryptokims = {};
           Cryptokims.KimState.accountQueried = true;
         });
       }, 100);
- 
+
       // Cryptokims.restoreTransactions();
       setInterval(Cryptokims.checkTransactions, 1000);
 
@@ -666,7 +678,7 @@ var Cryptokims = {};
     console.log(`BUY KIM ID: ${kim_buy_id}`);
     console.log(`BUY KIM PRICE: ${kim_buy_price}`);
 
-    console.log(`Requesting purchase on kim: #${kim_buy_id} for ${kim_buy_price} ether`);
+    console.log(`Requesting purchase on kim: #${kim_buy_id} for ${kim_buy_price} wei`);
 
     let txnObject = {
       from: currentUser,
@@ -677,14 +689,19 @@ var Cryptokims = {};
 
     Cryptokims.kimContract.buyKim.sendTransaction(kim_buy_id, txnObject, function(error, result){
       if (error) {
-        console.log(error);
+        // console.log(error);
+        console.log('rejected transaction');
       } else {
         console.log(`Purchase confirmed, transaction hash: ${result}`);
+        //add confirmation that kim was purchased and display it to the user
       }
     });
   }
 
-  // Kevin approved 
+  function clearModal(){
+    modal.html("");
+  }
+  // Kevin approved
   // function to append information to the kim for sale modal.
   function kimsForSaleModal(index, value){
     var modal = $('.modal-header');
@@ -698,19 +715,19 @@ var Cryptokims = {};
         </button>
       </div>
       <div class="modal-body">
-        <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${index}.png"></img>
+        <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${index}.png"></img>
         <br>
         <p>Selling for: <strong>${value}ETH</strong></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Decline</button>
-        <button onClick="buyKim(${index},${value})" type="button" class="btn btn-primary" data-dismiss="modal">PURCHASE</button>
+        <button onClick="buyKim(${index},${value}), clearModal()" type="button" class="btn btn-primary" data-dismiss="modal">PURCHASE</button>
       </div>
       `
     );
   }
 
-  // Kevin approved 
+  // Kevin approved
   // function used for the display of all the kims
   function totalKimsCreated() {
     let totalKims;
@@ -732,7 +749,7 @@ var Cryptokims = {};
     });
   }
 
-  // Kevin approved 
+  // Kevin approved
   // function used to display all kims avaliable for purchase
   function totalKimsOnAuction() {
     let totalKims;
@@ -767,7 +784,7 @@ var Cryptokims = {};
       } else {
         kimsToLoop = result.c[0];
         console.log(`kimsToLoop: ${kimsToLoop}`);
-        for (let i = 0; i < kimsToLoop; i++){
+        for (let i = 0; i < 24; i++){
           Cryptokims.kimContract.tokenAuction(i, function(error, result) {
             if (error) {
               console.log(error);
@@ -794,8 +811,8 @@ var Cryptokims = {};
                           <div class="panel-body">
                             <img class="img-responsive center-block" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
                           </div>
-                          <div class="panel-footer">
-                            <p>Sell Price: ${priceETH} ETH</p>
+                          <div class="panel-footer" style="height:60px;">
+                            <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary btn-small center-block" data-toggle="modal" data-target="#exampleModalCenter">Purchase</button>
                           </div>
                         </div>
                       </div>
@@ -813,8 +830,8 @@ var Cryptokims = {};
                             <div class="panel-body">
                               <img class="img-responsive center-block" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
                             </div>
-                            <div class="panel-footer">
-                              <p>This Kim is not for sale!</p>
+                            <div class="panel-footer" style="height:60px;">
+                              <button type="button" class="btn btn-primary btn-small center-block" disabled>Purchase</button>
                             </div>
                           </div>
                         </div>
@@ -872,7 +889,6 @@ var Cryptokims = {};
                             <div class="panel-body"><img class="img-responsive center-block" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt=""></img></div>
                             <div class="panel-footer">
                               <p class="text-center" style="overflow:hidden">
-                                owner: ${ownerAddress}
                                 price: ${priceETH} eth
                               </p>
                               <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#exampleModalCenter">Purchase</button>
@@ -999,7 +1015,7 @@ var Cryptokims = {};
           </button>
         </div>
         <div class="modal-body">
-          <img src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
+          <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
           <br>
         </div>
         <div class="modal-footer">
@@ -1026,7 +1042,7 @@ var Cryptokims = {};
     <div class="modal-body">
       <form>
         <div class="form-group">
-          <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
+          <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
           <br>
           <input class="form-control" id="kim_sell_index" type="hidden" placeholder="${val}" value="${val}">
           <input class="form-control" class="center-block" id="kim_sell_price" type="number" placeholder="sell price in ETH">
@@ -1083,7 +1099,7 @@ var Cryptokims = {};
               </div>
               <div class="modal-body">
               <h3 class="text-center"></h2>
-              <img class="img-responsive center-block" style="width:50vh; height:50vh;" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
+              <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
               <h3 class="text-center">Kim O-wner: ${sellerAddress} </h2>
               <h3 class="text-center">Sale Status: ${saleStatus}</h3>
               <h3 class="text-center">Price: ${salePrice} ETH</h3>
@@ -1189,7 +1205,7 @@ var Cryptokims = {};
       ethPanel.append(
         `
         <div class="panel panel-default" style="position:fixed; top:10%; right:0%;">
-          <div class="panel-body" style="height:13vh; width:20vh">
+          <div class="panel-body" style="max-height:190px; width:250px;">
             <!-- make this part dynamic -->
             <h4>You are not connected! </h4>
             <a href="https://metamask.io/" target="_blank"><h4>Download MetaMask!</h4></a>
@@ -1202,10 +1218,10 @@ var Cryptokims = {};
       ethPanel.append(
         `
         <div class="panel panel-default" style="position:fixed; top:10%; right:0%;">
-          <div class="panel-body" style="height:13vh; width:20vh">
+          <div class="panel-body" style="max-height:190px; width:250px;">
             <!-- make this part dynamic -->
             <h4>Connected To Ethereum </h4>
-            <a href="/mykims.html"><h3>${shortUser}</h3></a>
+            <a href="myKims.html"><h3>${shortUser}</h3></a>
           </div>
         </div>
         `
@@ -1328,3 +1344,176 @@ var Cryptokims = {};
       }
     });
   }
+
+  function paginateClear(){
+    var kimList = $(".kim-list");
+
+    kimList.html("");
+  }
+
+
+  function paginateKims(amount){
+    var kimsToLoop;
+    var kimList = $(".kim-list");
+    paginateClear();
+    var kimsToLoop = 24;
+    for (let i = 0; i < kimsToLoop; i++){
+      Cryptokims.kimContract.tokenAuction((i+amount), function(error, result) {
+        if (error) {
+          console.log(error);
+        } else {
+          var saleStatus = result[0];
+          var kimIndex = result[1];
+          var ownerAddress = result[2];
+          var priceETH = result[3];
+          var blockNum = result[4]['c'][0];
+
+          Cryptokims.kimContract.tokenToOwner.call(i, function(error,result) {
+            if (error) {
+                console.log(error);
+            } else {
+
+              // console.log(`KIMINDEX: SALE STATUS ${saleStatus}. INDEX ${kimIndex}, ownerADDRESS ${ownerAddress}, blockNumber: ${blockNum}`);
+              if (saleStatus === true){ //true so the kim is for sale.
+                kimList.append(
+                  `
+                  <div class="col" style="float: left;width: 250px;margin: 1em;">
+                    <div class="panel panel-primary">
+                      <div class="panel-heading text-center"><h3>Kim ID: #${kimIndex}</h3></div>
+                      <div class="panel-body">
+                        <img class="img-responsive center-block" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
+                      </div>
+                      <div class="panel-footer" style="height:60px;">
+                        <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#exampleModalCenter">Purchase</button>
+                      </div>
+                    </div>
+                  </div>
+                  `
+                );
+              } else {
+                if(saleStatus === false){ //false means that its not for sale
+                  kimList.append(
+                    `
+                    <div class="col" style="float: left;width: 250px;margin: 1em;">
+                      <div class="panel panel-success">
+                        <div class="panel-heading text-center">
+                          <h3>Kim ID: #${kimIndex}</h3>
+                        </div>
+                        <div class="panel-body">
+                          <img class="img-responsive center-block" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
+                        </div>
+                        <div class="panel-footer" style="height:60px;">
+                          <button type="button" class="btn btn-primary btn-small center-block" disabled>Purchase</button>
+                        </div>
+                      </div>
+                    </div>
+                      `
+                  );
+                }
+              }
+            }
+          });
+        }
+      });
+    }
+  }
+
+  function paginateLastKims(amount, remainder){
+    var kimsToLoop;
+    var kimList = $(".kim-list");
+    paginateClear();
+    var kimsToLoop = amount;
+    for (let i = 0; i < remainder; i++){
+      Cryptokims.kimContract.tokenAuction((i+amount), function(error, result) {
+        if (error) {
+          console.log(error);
+        } else {
+          var saleStatus = result[0];
+          var kimIndex = result[1];
+          var ownerAddress = result[2];
+          var priceETH = result[3];
+          var blockNum = result[4]['c'][0];
+
+          Cryptokims.kimContract.tokenToOwner.call(i, function(error,result) {
+            if (error) {
+                console.log(error);
+            } else {
+
+              // console.log(`KIMINDEX: SALE STATUS ${saleStatus}. INDEX ${kimIndex}, ownerADDRESS ${ownerAddress}, blockNumber: ${blockNum}`);
+              if (saleStatus === true){ //true so the kim is for sale.
+                kimList.append(
+                  `
+                  <div class="col" style="float: left;width: 250px;margin: 1em;">
+                    <div class="panel panel-primary">
+                      <div class="panel-heading text-center"><h3>Kim ID: #${kimIndex}</h3></div>
+                      <div class="panel-body">
+                        <img class="img-responsive center-block" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
+                      </div>
+                      <div class="panel-footer" style="height:60px;">
+                        <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#exampleModalCenter">Purchase</button>
+                      </div>
+                    </div>
+                  </div>
+                  `
+                );
+              } else {
+                if(saleStatus === false){ //false means that its not for sale
+                  kimList.append(
+                    `
+                    <div class="col" style="float: left;width: 250px;margin: 1em;">
+                      <div class="panel panel-success">
+                        <div class="panel-heading text-center">
+                          <h3>Kim ID: #${kimIndex}</h3>
+                        </div>
+                        <div class="panel-body">
+                          <img class="img-responsive center-block" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
+                        </div>
+                        <div class="panel-footer" style="height:60px;">
+                          <button type="button" class="btn btn-primary btn-small center-block" disabled>Purchase</button>
+                        </div>
+                      </div>
+                    </div>
+                      `
+                  );
+                }
+              }
+            }
+          });
+        }
+      });
+    }
+  }
+function kimPagination(){
+  var paginationTag = $('.pagination');
+
+
+  Cryptokims.kimContract.kimsCreated(function(error, result) {
+    if (error) {
+      console.log(error);
+    } else {
+      var totalKims = result.c[0];
+      var totalPages = totalKims/24
+      var remainingKims = totalKims%24;
+      var beforeRemainder = totalKims-remainingKims;
+
+      totalPages = Math.floor(totalPages);
+      console.log(totalKims);
+      console.log(totalPages);
+
+      for(var i = 0 ; i < totalPages ; i++){
+        paginationTag.append(
+          `
+            <li class="page-item"><a class="page-link" onclick="paginateKims(${i*24});">${i+1}</a></li>
+          `
+        );
+        var counter = i+1;
+      }
+      console.log(`amount of kims not shown: ${remainingKims}`);
+      paginationTag.append(
+        `
+          <li class="page-item"><a class="page-link" onclick="paginateLastKims(${beforeRemainder},${remainingKims});">${counter+1}</a></li>
+        `
+      );
+    }
+  });
+}
