@@ -693,6 +693,7 @@ var Cryptokims = {};
         console.log('rejected transaction');
       } else {
         console.log(`Purchase confirmed, transaction hash: ${result}`);
+        ga('send', 'event', 'order_placed', 'buy_kim');
         //add confirmation that kim was purchased and display it to the user
       }
     });
