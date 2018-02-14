@@ -643,6 +643,7 @@ var Cryptokims = {};
 
   // Kevin approved and functioning sell kim function
   // sell kim function
+  // WORKING
   function sellKim() {
     let kim_sell_id = $('#kim_sell_index').val();
     let kim_sell_price = $('#kim_sell_price').val();
@@ -663,6 +664,7 @@ var Cryptokims = {};
 
   // Kevin approved and functioning buy kim function
   // buy kim function.
+  // WORKING
   function buyKim(id, price) {
     let kim_buy_id = id;
     let kim_buy_price = price;
@@ -699,12 +701,15 @@ var Cryptokims = {};
     });
   }
 
+  // WORKING
   function clearModal(){
     var modal = $('.modal-content');
     modal.html("");
   }
+
   // Kevin approved
   // function to append information to the kim for sale modal.
+  // WORKING
   function kimsForSaleModal(index, value){
     var modal = $('.modal-content');
     console.log(value);
@@ -731,6 +736,7 @@ var Cryptokims = {};
 
   // Kevin approved
   // function used for the display of all the kims
+  // WORKING NOT IN USE
   function totalKimsCreated() {
     let totalKims;
     var totalKimsDisplay = $('#total-kims-created');
@@ -753,6 +759,7 @@ var Cryptokims = {};
 
   // Kevin approved
   // function used to display all kims avaliable for purchase
+  // WORKING NOT IN USE
   function totalKimsOnAuction() {
     let totalKims;
     var totalKimsDisplay = $('#total-kims-on-auction');
@@ -774,6 +781,7 @@ var Cryptokims = {};
 
   // Kevin approved
   // Function to get all Kims
+  // WORKING
   function getAllKims() {
     var kimsToLoop;
     // var kimCardDeck = $(".card-deck");
@@ -793,8 +801,9 @@ var Cryptokims = {};
               var kimIndex = result[1];
               var ownerAddress = result[2];
               var priceETH = result[3];
-              priceETH = web3.fromWei(priceETH, 'ether');
 
+              priceETH = web3.fromWei(priceETH, 'ether');
+              console.log('hey'+priceETH);
 
               var blockNum = result[4]['c'][0];
 
@@ -850,6 +859,7 @@ var Cryptokims = {};
 
   // Kevin approved
   // Display all kims on sale
+  // NOT WORKING, NOT IN USE
   function getAllKimsOnAuction() {
     var kimList = $(".kim-list-on-sale");
     var currentUser = web3.eth.coinbase;
@@ -912,6 +922,7 @@ var Cryptokims = {};
 
   // Kevin approved
   // Display a current users kims
+  // WORKING
   function currentUserKims() {
     var kimList = $("#current_user_kim_template");
     currentUser = web3.eth.coinbase;
@@ -981,19 +992,6 @@ var Cryptokims = {};
       }
     });
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   /*THE OLD FUNCTION*/
@@ -1078,6 +1076,7 @@ var Cryptokims = {};
 
   // Kevin approved
   // Cancel kim sale and remove from auction
+  // WORKING
   function cancelKimAuction(index){
     var kimToRemove = index;
 
@@ -1092,6 +1091,7 @@ var Cryptokims = {};
 
   // Kevin approved
   // Modal to confirm removal of kim
+  // NOT SURE IF WORKING OR NOT
   function giveModalValueRemoveListing(val){
     var modal = $('.modal-header');
     modal.html("");
@@ -1117,6 +1117,7 @@ var Cryptokims = {};
 
   // Kevin approved
   // give modal value for sell kim function
+  // WORKING
   function giveModalValue(val){
     var modal = $('.modal-content');
     console.log('giveModalValue clicked');
@@ -1154,6 +1155,7 @@ var Cryptokims = {};
   // val then is passed into the kimContract.kims call back and is reassigned to equal the kimName
   // once thats assigned, val is used again in the kimToOwner call function to get the owners address.
   // its then appended to the modal and displayed on click.
+  // WORKING
   function giveModalValueHome(val){
     var modal = $('.modal-content');
     var kimOwner = '';
@@ -1230,6 +1232,7 @@ var Cryptokims = {};
 
   // Kevin approved
   // Display all kims an owner is selling
+  // WORKING
   function getUserKimsOnSale() {
     var kimList = $(".user-kims-on-sale");
     var currentOwner = web3.eth.coinbase;
@@ -1274,6 +1277,7 @@ var Cryptokims = {};
 
   // Kevin approved
   // Get users account number and display on user page.
+  // WORKING
   function getUserAccount(){
     var accDisplay = $(".user-account");
     var currentUser = web3.eth.coinbase;
@@ -1292,6 +1296,7 @@ var Cryptokims = {};
 
   // Kevin approved
   // Hide my kims account tab on the nav bar. might remove this later.
+  // WORKING
   function hideAccountTab(){
     var currentUser = web3.eth.coinbase;
     var kimTab = $('#your-kims-tab');
@@ -1308,6 +1313,7 @@ var Cryptokims = {};
 
   // Kevin approved
   // Side log in pannel for meta mask
+  // WORKING
   function ethereumPanel(){
     let currentUser = web3.eth.coinbase;
     var ethPanel = $('#ethereum-panel');
@@ -1342,6 +1348,7 @@ var Cryptokims = {};
 
   // Kevin approved
   // Search for kim function
+  // NOT WORKING NOT IN USE
   function searchForKim(){
     var searchQuery = $('#searchQuery').val();
     // console.log(`SEARCHING FOR: ${searchQuery}`);
