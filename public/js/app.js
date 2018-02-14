@@ -545,8 +545,7 @@ var Cryptokims = {};
   function sayHi(){
     console.log('hi');
     var html = $('html');
-    html.html("");
-    html.append(`<h1> you dont have meta mask installed, you cant see the kims :( </h1>`);
+    html.html("");   window.location.replace('/nometa');
   }
   // Add event listener to window, and run startApp() function
   window.addEventListener('load', function() {
@@ -560,7 +559,8 @@ var Cryptokims = {};
       web3 = new Web3(web3.currentProvider);
       window.web3 = web3;
     } else {
-      sayHi();
+      // sayHi();
+      window.location.replace('/nometa');
       console.log("- Didn't find web3, using fallback");
       window.web3 = new Web3(new Web3.providers.HttpProvider("https://localhost:8545"));
       Cryptokims.KimState.web3UsingInfura = true;
@@ -1209,7 +1209,7 @@ var Cryptokims = {};
           <div class="panel-body" style="max-height:190px; width:250px;">
             <!-- make this part dynamic -->
             <h4>You are not connected! </h4>
-            <a href="https://metamask.io/" target="_blank"><h4>Download MetaMask!</h4></a>
+            <a href="https://metamask.io/" target="_blank"><h4>Log-In to MetaMask!</h4></a>
           </div>
         </div>
         `
