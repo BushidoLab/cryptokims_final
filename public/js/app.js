@@ -966,7 +966,7 @@ var Cryptokims = {};
                       console.log(sellerAddress2);
                       kimList.append(
                         `
-                        <div class="col" style="float: left;width: 250px;margin: 1em;">
+                        <div class="col" style="float: left;width: 250px;margin: 1em;padding:100px;">
                           <div class="panel panel-default">
                             <div class="panel-heading">
                               <h3 class="text-center">Kim: #${kimIndex}</h3>
@@ -1206,8 +1206,8 @@ var Cryptokims = {};
     if (currentUser == null ){
       ethPanel.append(
         `
-        <div class="panel panel-default" style="position:fixed; top:10%; right:0%;">
-          <div class="panel-body" style="max-height:190px; width:250px;">
+        <div id="ethereum-panel" class="panel panel-default" style="position:fixed; top:10%; right:0%;">
+          <div class="ethereum-panel-body" style="max-height:190px; width:250px;">
             <!-- make this part dynamic -->
             <h4>You are not connected! </h4>
             <a href="https://metamask.io/" target="_blank"><h4>Log-In to MetaMask!</h4></a>
@@ -1219,8 +1219,8 @@ var Cryptokims = {};
       var shortUser = currentUser.substring(0,10);
       ethPanel.append(
         `
-        <div class="panel panel-default" style="position:fixed; top:10%; right:0%;">
-          <div class="panel-body" style="max-height:190px; width:250px;">
+        <div id="ethereum-panel" class="panel panel-default" style="position:fixed; top:10%; right:0%;">
+          <div class="ethereum-panel-body" style="max-height:190px; width:250px;">
             <!-- make this part dynamic -->
             <h4>Connected To Ethereum </h4>
             <a href="/myKims"><h3>${shortUser}</h3></a>

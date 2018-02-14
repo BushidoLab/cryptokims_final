@@ -27,3 +27,7 @@ end
 get '/myKims' do
   send_file File.join(settings.public_folder, 'mykims.html')
 end
+
+get '/test' do
+  send_file File.join(settings.public_folder, 'test.html')
+end
