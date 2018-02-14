@@ -700,26 +700,26 @@ var Cryptokims = {};
   }
 
   function clearModal(){
+    var modal = $('.modal-content');
     modal.html("");
   }
   // Kevin approved
   // function to append information to the kim for sale modal.
   function kimsForSaleModal(index, value){
-    var modal = $('.modal-header');
+    var modal = $('.modal-content');
     console.log(value);
-    modal.html("");
+    clearModal();
     modal.append(
       `
       <div class="modal-header">
-        <h2 class="modal-title" id="sellKimModalLabel">You are about to purchase Kim: #${index}</h2>
+        <h5 class="modal-title" id="centralModalInfo">Kim: #${index}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${index}.png"></img>
-        <br>
-        <p>Selling for: <strong>${value}ETH</strong></p>
+      <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${index}.png"></img>
+       <h3 class="text-center">Price: ${value} ETH</h3>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Decline</button>
@@ -805,66 +805,35 @@ var Cryptokims = {};
                   // CREATE THE OBJECTS IN A SET OF 4 CARD DECK
                     // console.log(`KIMINDEX: SALE STATUS ${saleStatus}. INDEX ${kimIndex}, ownerADDRESS ${ownerAddress}, blockNumber: ${blockNum}`);
                     if (saleStatus === true){ //true so the kim is for sale.
-                      // kimCardDeck.append(
-                      //   `
-                      //   <div class="card text-center w-25 " style="width: 18rem;">
-                      //     <div class="card-header bg-light">
-                      //       Kim # 555
-                      //     </div>
-                      //     <img class="card-img-top" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png">
-                      //     <div class="card-body">
-                      //       <h5 class="card-title">Kim ID: #${kimIndex}</h5>
-                      //       <p class="card-text">Price: $5 ETH</p>
-                      //       <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary btn-small center-block" data-toggle="modal" data-target="#exampleModalCenter">Purchase</button>
-                      //     </div>
-                      //   </div>
-                      //   `
-                      // );
                       kimCardDeck.append(
                         `
                         <div class="card text-center" >
                           <div class="card-header bg-light">
                             Kim # ${kimIndex}
                           </div>
-                          <img class="card-img-top" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
+                          <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo"src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
                           <div class="card-body">
                             <p class="card-text">Price: ${priceETH} ETH</p>
-                            <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary btn-small center-block" data-toggle="modal" data-target="#exampleModalCenter">Purchase</button>
+                            <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary btn-small center-block" data-toggle="modal" data-target="#centralModalInfo">Purchase</button>
                           </div>
                         </div>
-                        `  
+                        `
                         );
                     } else {
                       if(saleStatus === false){ //false means that its not for sale
-                        // kimCardDeck.append(
-                        //   `
-                        // <div class="card text-center w-25 " style="width: 18rem;">
-                        //   <div class="card-header bg-light">
-                        //     Kim # 555
-                        //   </div>
-                        //   <img class="card-img-top" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png">
-                        //   <div class="card-body">
-                        //     <h5 class="card-title">Kim ID: #${kimIndex}</h5>
-                        //     <p class="card-text">Price: $5 ETH</p>
-                        //     // <a href="#" class="btn btn-primary">Buy Kim</a>
-                        //     <button type="button" class="btn btn-primary btn-small center-block disabled" >Purchase</button>
-                        //   </div>
-                        // </div>
-                        //     `
-                        // );
                           kimCardDeck.append(
                         `
                         <div class="card text-center" >
                           <div class="card-header bg-light">
                             Kim # ${kimIndex}
                           </div>
-                          <img class="card-img-top" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
+                          <img class="card-img-top" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#centralModalInfo" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
                           <div class="card-body">
                             <p class="card-text">Price: ${priceETH} ETH</p>
                             <a href="#" class="btn btn-danger disabled">Kim is not for sale</a>
                           </div>
                         </div>
-                        `  
+                        `
                         );
                       }
                     }
@@ -1097,7 +1066,7 @@ var Cryptokims = {};
   // once thats assigned, val is used again in the kimToOwner call function to get the owners address.
   // its then appended to the modal and displayed on click.
   function giveModalValueHome(val){
-    var modal = $('.modal-header');
+    var modal = $('.modal-content');
     var kimOwner = '';
     modal.html("");
 
@@ -1121,26 +1090,50 @@ var Cryptokims = {};
           } else {
             console.log(result);
             var sellerAddress = result;
+            sellerAddress = sellerAddress.substring(0,10);
+            console.log(sellerAddress);
+            // modal.append(
+            //   `
+            //   <div class="modal-header">
+            //     <h2 class="modal-title text-center" id="sellKimModalLabel">Kim: #${kimIndex}</h2>
+            //     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            //       <span aria-hidden="true">&times;</span>
+            //     </button>
+            //   </div>
+            //   <div class="modal-body">
+            //     <h3 class="text-center"></h2>
+            //     <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
+            //     <h3 class="text-center">Kim Owner: ${sellerAddress} </h2>
+            //     <h3 class="text-center">Sale Status: ${saleStatus}</h3>
+            //     <h3 class="text-center">Price: ${value} ETH</h3>
+            //   </div>
+            //   <div class="modal-footer">
+            //     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            //   </div>
+            //   `
+            // );
+
             modal.append(
-              `
-              <div class="modal-header">
-                <h2 class="modal-title text-center" id="sellKimModalLabel">Kim: #${kimIndex}</h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            `
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-              </div>
-              <div class="modal-body">
-              <h3 class="text-center"></h2>
-              <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
-              <h3 class="text-center">Kim Owner: ${sellerAddress} </h2>
-              <h3 class="text-center">Sale Status: ${saleStatus}</h3>
-              <h3 class="text-center">Price: ${value} ETH</h3>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              </div>
-              `
-            );
+            </div>
+            <div class="modal-body">
+            <h3 class="text-center"></h2>
+            <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
+             <h3 class="text-center">Kim Owner: ${sellerAddress} </h2>
+             <h3 class="text-center">Sale Status: ${saleStatus}</h3>
+             <h3 class="text-center">Price: ${value} ETH</h3>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            `
+
+            )
           }
         });
       }
