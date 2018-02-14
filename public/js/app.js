@@ -942,7 +942,7 @@ var Cryptokims = {};
                       <div class="card-header bg-light">
                         Kim # ${kimIndex}
                       </div>
-                      <img class="card-img-top" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
+                      <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
                       <div class="card-body">
                           <button onClick="cancelKimAuction(${kimIndex})"type="button" class="btn btn-primary center-block" style="margin-top: 9px;">Remove Listing</button>
                       </div>
@@ -964,9 +964,9 @@ var Cryptokims = {};
                             <div class="card-header bg-light">
                               Kim # ${kimIndex}
                             </div>
-                            <img class="card-img-top" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
+                            <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
                             <div class="card-body">
-                              <button onClick="giveModalValue(${kimIndex})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#showKimModal" style="margin-top: 9px;">Sell this Kim!</button>
+                              <button onClick="giveModalValue(${kimIndex})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#centralModalInfo" style="margin-top: 9px;">Sell this Kim!</button>
                             </div>
                           </div>
                         `
@@ -1118,30 +1118,31 @@ var Cryptokims = {};
   // Kevin approved
   // give modal value for sell kim function
   function giveModalValue(val){
-    var modal = $('.modal-header');
+    var modal = $('.modal-content');
+    console.log('giveModalValue clicked');
     modal.html("");
     modal.append(
       `
-    <div class="modal-header">
-      <h2 class="modal-title" id="sellKimModalLabel">You are about to sell Kim: #${val}</h2>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <form>
-        <div class="form-group">
-          <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
-          <br>
-          <input class="form-control" id="kim_sell_index" type="hidden" placeholder="${val}" value="${val}">
-          <input class="form-control" class="center-block" id="kim_sell_price" type="number" placeholder="sell price in ETH">
-        </div>
-      </form>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-      <button type="button" class="btn btn-primary" onclick="sellKim() " data-dismiss="modal">Sell</button>
-    </div>
+      <div class="modal-header">
+        <h2 class="modal-title" id="sellKimModalLabel">You are about to sell Kim: #${val}</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
+            <br>
+            <input class="form-control" id="kim_sell_index" type="hidden" placeholder="${val}" value="${val}">
+            <input class="form-control" class="center-block" id="kim_sell_price" type="number" placeholder="sell price in ETH">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="sellKim() " data-dismiss="modal">Sell</button>
+      </div>
       `
     );
   }
@@ -1210,7 +1211,6 @@ var Cryptokims = {};
               </button>
             </div>
             <div class="modal-body">
-            <h3 class="text-center"></h2>
             <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
              <h3 class="text-center">Kim Owner: ${sellerAddress} </h2>
              <h3 class="text-center">Sale Status: ${saleStatus}</h3>
