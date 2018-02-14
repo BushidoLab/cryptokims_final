@@ -722,7 +722,7 @@ var Cryptokims = {};
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body mx-auto">
       <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${index}.png"></img>
        <h3 class="text-center">Price: ${value} ETH</h3>
       </div>
@@ -1103,7 +1103,7 @@ var Cryptokims = {};
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body mx-auto">
           <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
           <br>
         </div>
@@ -1130,7 +1130,7 @@ var Cryptokims = {};
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body mx-auto">
         <form>
           <div class="form-group">
             <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
@@ -1191,7 +1191,7 @@ var Cryptokims = {};
             //       <span aria-hidden="true">&times;</span>
             //     </button>
             //   </div>
-            //   <div class="modal-body">
+            //   <div class="modal-body mx-auto">
             //     <h3 class="text-center"></h2>
             //     <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
             //     <h3 class="text-center">Kim Owner: ${sellerAddress} </h2>
@@ -1212,7 +1212,7 @@ var Cryptokims = {};
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body mx-auto">
             <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
              <h3 class="text-center">Kim Owner: ${sellerAddress} </h2>
              <h3 class="text-center">Sale Status: ${saleStatus}</h3>
