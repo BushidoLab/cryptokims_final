@@ -22,6 +22,9 @@
   <link rel="stylesheet" href="/css/blog.css">
   <link rel="stylesheet" href="/css/docs.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+
 
 
   </head>
@@ -37,6 +40,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light rounded ">
       <a class="navbar-brand" href="/">
+        <img  src="/images/kim_small.png" alt=""/ height="75px" width="75px">
         KimJongCrypto<sup>*beta</sup>
       </a>
 
@@ -44,10 +48,10 @@
         <div class="collapse navbar-collapse " id="navbarsExample09">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">My Kims</a>
+              <a class="nav-link" href="/myKims">My Kims</a>
             </li>
 <!--             <li class="nav-item">
               <a class="nav-link disabled" href="#">Disabled</a>
@@ -98,21 +102,40 @@
   <footer class="container py-5">
     <div class="row">
       <div class="col-12 col-md">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
+        <img  src="/images/kim_small.png" alt=""/ height="100px" width="100px">
+<!--         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg> -->
         <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
+        <small class="d-block mb-3 text-muted">Dedicated to the Fearless leader of North Korea</small>
       </div>
       <div class="col-6 col-md">
-        <h5>Features</h5>
+        <h5>Cool Links</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Cool stuff</a></li>
-          <li><a class="text-muted" href="#">Random feature</a></li>
-          <li><a class="text-muted" href="#">Team feature</a></li>
-          <li><a class="text-muted" href="#">Stuff for developers</a></li>
-          <li><a class="text-muted" href="#">Another one</a></li>
-          <li><a class="text-muted" href="#">Last time</a></li>
+          <li>
+            <a class="text-muted" href="http://www.bushidolab.com/">
+              <i class="fas fa-lightbulb"></i>
+              The Creators
+            </a>
+        </li>
+          <li>
+            <a class="text-muted" href="https://www.reddit.com/r/kimjongcrypto/">
+          <i class="fab fa-reddit-alien"></i>
+          Reddit</a></li>
+          <li>
+            <a class="text-muted" href="https://www.facebook.com/kimjongcrypto">
+          <i class="fab fa-facebook"></i>
+          Facebook</a></li>
+          <li>
+            <a class="text-muted" href="https://www.instagram.com/kimjcrypto/">
+              <i class="fab fa-instagram"></i>
+              Instagram</a></li>
+          <li>
+            <a class="text-muted" href="https://twitter.com/kimjcrypto">
+              <i class="fab fa-twitter"></i>
+              Twitter</a></li>
+          <!-- <li><a class="text-muted" href="#">Last time</a></li> -->
         </ul>
       </div>
-      <div class="col-6 col-md">
+<!--       <div class="col-6 col-md">
         <h5>Resources</h5>
         <ul class="list-unstyled text-small">
           <li><a class="text-muted" href="#">Resource</a></li>
@@ -129,8 +152,8 @@
           <li><a class="text-muted" href="#">Government</a></li>
           <li><a class="text-muted" href="#">Gaming</a></li>
         </ul>
-      </div>
-      <div class="col-6 col-md">
+      </div> -->
+<!--       <div class="col-6 col-md">
         <h5>About</h5>
         <ul class="list-unstyled text-small">
           <li><a class="text-muted" href="#">Team</a></li>
@@ -138,7 +161,7 @@
           <li><a class="text-muted" href="#">Privacy</a></li>
           <li><a class="text-muted" href="#">Terms</a></li>
         </ul>
-      </div>
+      </div> -->
     </div>
   </footer>
 
@@ -154,29 +177,6 @@
   <script src="js/utils.js"></script>
   
 
-
-
-<!--    <script type="text/javascript">
-      var kim_card = $('#kim_template')
-
-      for(let i = 0 ; i < 24 ; i++){
-        kim_card.append(
-                        `
-                        <div class="card text-center" >
-                          <div class="card-header bg-light">
-                            Kim # ${i}
-                          </div>
-                          <img class="card-img-top" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/1.png" alt="Card image cap">
-                          <div class="card-body">
-                            <h5 class="card-title">Kim # 555</h5>
-                            <p class="card-text">Price: $5 ETH</p>
-                            <a href="#" class="btn btn-primary">Buy Kim</a>
-                          </div>
-                        </div>
-                        `  
-                        );
-      }
-    </script>-->
 
 
 
