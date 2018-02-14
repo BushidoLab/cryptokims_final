@@ -705,11 +705,12 @@ var Cryptokims = {};
   // function to append information to the kim for sale modal.
   function kimsForSaleModal(index, value){
     var modal = $('.modal-header');
+    console.log(value);
     modal.html("");
     modal.append(
       `
       <div class="modal-header">
-        <h2 class="modal-title" id="sellKimModalLabel">You are about to purchase Kim: #${index}</h2>
+        <h2 class="modal-title" id="sellKimModalLabel">You are about 2 purchase Kim: #${index}</h2>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -783,7 +784,6 @@ var Cryptokims = {};
         console.log(error);
       } else {
         kimsToLoop = result.c[0];
-        console.log(`kimsToLoop: ${kimsToLoop}`);
         for (let i = 0; i < 24; i++){
           Cryptokims.kimContract.tokenAuction(i, function(error, result) {
             if (error) {
@@ -794,6 +794,8 @@ var Cryptokims = {};
               var ownerAddress = result[2];
               var priceETH = result[3];
               priceETH = web3.fromWei(priceETH, 'ether');
+              console.log(`price ETH from getAllKims() index:${i}  ${priceETH}`);
+
               var blockNum = result[4]['c'][0];
 
               Cryptokims.kimContract.tokenToOwner.call(i, function(error,result) {
@@ -874,6 +876,7 @@ var Cryptokims = {};
                 var ownerAddress = result[2];
                 var priceETH = result[3];
                 priceETH = web3.fromWei(priceETH, 'ether');
+
                 var blockNum = result[4]['c'][0];
 
                 Cryptokims.kimContract.tokenToOwner.call(i, function(error,result) {
