@@ -776,10 +776,9 @@ var Cryptokims = {};
   // Function to get all Kims
   function getAllKims() {
     var kimsToLoop;
-    var kimList = $(".kim-list");
+    // var kimCardDeck = $(".card-deck");
     var kimItems = $(".placeholder-kim");
-
-
+    var kimCardDeck = $('#kim_template')
     Cryptokims.kimContract.kimsCreated(function(error, result) {
       if (error) {
         console.log(error);
@@ -803,45 +802,72 @@ var Cryptokims = {};
                 if (error) {
                     console.log(error);
                 } else {
-
-                  // console.log(`KIMINDEX: SALE STATUS ${saleStatus}. INDEX ${kimIndex}, ownerADDRESS ${ownerAddress}, blockNumber: ${blockNum}`);
-                  if (saleStatus === true){ //true so the kim is for sale.
-                    kimList.append(
-                      `
-                      <div class="col" style="float: left;width: 250px;margin: 1em;">
-                        <div class="panel panel-primary">
-                          <div class="panel-heading text-center"><h3>Kim ID: #${kimIndex}</h3></div>
-                          <div class="panel-body">
-                            <img class="img-responsive center-block" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
+                  // CREATE THE OBJECTS IN A SET OF 4 CARD DECK
+                    // console.log(`KIMINDEX: SALE STATUS ${saleStatus}. INDEX ${kimIndex}, ownerADDRESS ${ownerAddress}, blockNumber: ${blockNum}`);
+                    if (saleStatus === true){ //true so the kim is for sale.
+                      // kimCardDeck.append(
+                      //   `
+                      //   <div class="card text-center w-25 " style="width: 18rem;">
+                      //     <div class="card-header bg-light">
+                      //       Kim # 555
+                      //     </div>
+                      //     <img class="card-img-top" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png">
+                      //     <div class="card-body">
+                      //       <h5 class="card-title">Kim ID: #${kimIndex}</h5>
+                      //       <p class="card-text">Price: $5 ETH</p>
+                      //       <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary btn-small center-block" data-toggle="modal" data-target="#exampleModalCenter">Purchase</button>
+                      //     </div>
+                      //   </div>
+                      //   `
+                      // );
+                      kimCardDeck.append(
+                        `
+                        <div class="card text-center" >
+                          <div class="card-header bg-light">
+                            Kim # ${kimIndex}
                           </div>
-                          <div class="panel-footer" style="height:60px;">
+                          <img class="card-img-top" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
+                          <div class="card-body">
+                            <p class="card-text">Price: ${priceETH} ETH</p>
                             <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary btn-small center-block" data-toggle="modal" data-target="#exampleModalCenter">Purchase</button>
                           </div>
                         </div>
-                      </div>
-                      `
-                    );
-                  } else {
-                    if(saleStatus === false){ //false means that its not for sale
-                      kimList.append(
+                        `  
+                        );
+                    } else {
+                      if(saleStatus === false){ //false means that its not for sale
+                        // kimCardDeck.append(
+                        //   `
+                        // <div class="card text-center w-25 " style="width: 18rem;">
+                        //   <div class="card-header bg-light">
+                        //     Kim # 555
+                        //   </div>
+                        //   <img class="card-img-top" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png">
+                        //   <div class="card-body">
+                        //     <h5 class="card-title">Kim ID: #${kimIndex}</h5>
+                        //     <p class="card-text">Price: $5 ETH</p>
+                        //     // <a href="#" class="btn btn-primary">Buy Kim</a>
+                        //     <button type="button" class="btn btn-primary btn-small center-block disabled" >Purchase</button>
+                        //   </div>
+                        // </div>
+                        //     `
+                        // );
+                          kimCardDeck.append(
                         `
-                        <div class="col" style="float: left;width: 250px;margin: 1em;">
-                          <div class="panel panel-success">
-                            <div class="panel-heading text-center">
-                              <h3>Kim ID: #${kimIndex}</h3>
-                            </div>
-                            <div class="panel-body">
-                              <img class="img-responsive center-block" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
-                            </div>
-                            <div class="panel-footer" style="height:60px;">
-                              <button type="button" class="btn btn-primary btn-small center-block" disabled>Purchase</button>
-                            </div>
+                        <div class="card text-center" >
+                          <div class="card-header bg-light">
+                            Kim # ${kimIndex}
+                          </div>
+                          <img class="card-img-top" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
+                          <div class="card-body">
+                            <p class="card-text">Price: ${priceETH} ETH</p>
+                            <a href="#" class="btn btn-danger disabled">Kim is not for sale</a>
                           </div>
                         </div>
-                          `
-                      );
+                        `  
+                        );
+                      }
                     }
-                  }
                 }
               });
             }
@@ -849,6 +875,8 @@ var Cryptokims = {};
         }
       }
     });
+
+
   }
 
   // Kevin approved
