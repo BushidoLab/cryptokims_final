@@ -8,9 +8,9 @@ require 'sinatra'
 # 	p "#{Time.now}"	#block of ruby code executed when
 # end
 
-get '/' do
-  send_file File.join(settings.public_folder, 'new_home.html')
-end
+# get '/' do
+#   send_file File.join(settings.public_folder, 'new_home.html')
+# end
 
 get '/nometa' do
   send_file File.join(settings.public_folder, 'noMetaMaskInstalled.html')
@@ -29,6 +29,10 @@ get '/myKims' do
 end
 
 
-# get '/test' do
-#   send_file File.join(settings.public_folder, 'test.html')
-# end
+get '/' do
+  send_file File.join(settings.public_folder, 'landing.html')
+end
+
+get '/test' do
+  send_file File.join(settings.public_folder, 'landing_test.html')
+end

@@ -723,7 +723,7 @@ var Cryptokims = {};
         </button>
       </div>
       <div class="modal-body">
-      <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${index}.png"></img>
+      <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${index}.png"></img>
        <h3 class="text-center">Price: ${value} ETH</h3>
       </div>
       <div class="modal-footer">
@@ -820,7 +820,7 @@ var Cryptokims = {};
                           <div class="card-header bg-light">
                             Kim # ${kimIndex}
                           </div>
-                          <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo"src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
+                          <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo"src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${kimIndex}.png" alt="Card image cap">
                           <div class="card-body">
                             <p class="card-text">Price: ${priceETH} ETH</p>
                             <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary btn-small center-block" data-toggle="modal" data-target="#centralModalInfo">Purchase</button>
@@ -836,7 +836,7 @@ var Cryptokims = {};
                           <div class="card-header bg-light">
                             Kim # ${kimIndex}
                           </div>
-                          <img class="card-img-top" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#centralModalInfo" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
+                          <img class="card-img-top" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#centralModalInfo" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${kimIndex}.png" alt="Card image cap">
                           <div class="card-body">
                             <p class="card-text">Price: ${priceETH} ETH</p>
                             <a href="#" class="btn btn-danger disabled">Kim is not for sale</a>
@@ -897,7 +897,7 @@ var Cryptokims = {};
                         <div class="col" style="float: left;width: 250px;margin: 1em;">
                           <div class="panel panel-primary">
                             <div class="panel-heading"><h3 class="text-center">kimid: #${kimIndex}</h3></div>
-                            <div class="panel-body"><img class="img-responsive center-block" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt=""></img></div>
+                            <div class="panel-body"><img class="img-responsive center-block" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${kimIndex}.png" alt=""></img></div>
                             <div class="panel-footer">
                               <p class="text-center" style="overflow:hidden">
                                 price: ${priceETH} eth
@@ -953,7 +953,7 @@ var Cryptokims = {};
                       <div class="card-header bg-light">
                         Kim # ${kimIndex}
                       </div>
-                      <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
+                      <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${kimIndex}.png" alt="Card image cap">
                       <div class="card-body">
                           <button onClick="cancelKimAuction(${kimIndex})"type="button" class="btn btn-primary center-block" style="margin-top: 9px;">Remove Listing</button>
                       </div>
@@ -975,7 +975,7 @@ var Cryptokims = {};
                             <div class="card-header bg-light">
                               Kim # ${kimIndex}
                             </div>
-                            <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
+                            <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${kimIndex}.png" alt="Card image cap">
                             <div class="card-body">
                               <button onClick="giveModalValue(${kimIndex})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#centralModalInfo" style="margin-top: 9px;">Sell this Kim!</button>
                             </div>
@@ -1029,7 +1029,7 @@ var Cryptokims = {};
   //                       <h3 class="text-center">Kim: #${kimIndex}</h3>
   //                     </div>
   //                     <div class="panel-body">
-  //                       <img onClick="giveModalValueHome(${kimIndex})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal"src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png"></img>
+  //                       <img onClick="giveModalValueHome(${kimIndex})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal"src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${kimIndex}.png"></img>
   //                     </div>
   //                     <div class="panel-footer">
   //                       <button onClick="cancelKimAuction(${kimIndex})"type="button" class="btn btn-primary center-block" style="margin-top: 9px;">Remove Listing</button>
@@ -1055,7 +1055,7 @@ var Cryptokims = {};
   //                             <h3 class="text-center">Kim: #${kimIndex}</h3>
   //                           </div>
   //                           <div class="panel-body">
-  //                             <img onClick="giveModalValueHome(${kimIndex})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal"src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png"></img>
+  //                             <img onClick="giveModalValueHome(${kimIndex})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal"src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${kimIndex}.png"></img>
   //                           </div>
   //                           <div class="panel-footer"><button onClick="giveModalValue(${kimIndex})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#showKimModal" style="margin-top: 9px;">Sell this Kim!</button>
   //                           </div>
@@ -1104,7 +1104,7 @@ var Cryptokims = {};
           </button>
         </div>
         <div class="modal-body">
-          <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
+          <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${val}.png"></img>
           <br>
         </div>
         <div class="modal-footer">
@@ -1133,7 +1133,7 @@ var Cryptokims = {};
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
+            <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${val}.png"></img>
             <br>
             <input class="form-control" id="kim_sell_index" type="hidden" placeholder="${val}" value="${val}">
             <input class="form-control" class="center-block" id="kim_sell_price" type="number" placeholder="sell price in ETH">
@@ -1193,7 +1193,7 @@ var Cryptokims = {};
             //   </div>
             //   <div class="modal-body">
             //     <h3 class="text-center"></h2>
-            //     <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
+            //     <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${val}.png"></img>
             //     <h3 class="text-center">Kim Owner: ${sellerAddress} </h2>
             //     <h3 class="text-center">Sale Status: ${saleStatus}</h3>
             //     <h3 class="text-center">Price: ${value} ETH</h3>
@@ -1213,7 +1213,7 @@ var Cryptokims = {};
               </button>
             </div>
             <div class="modal-body">
-            <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
+            <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${val}.png"></img>
              <h3 class="text-center">Kim Owner: ${sellerAddress} </h2>
              <h3 class="text-center">Sale Status: ${saleStatus}</h3>
              <h3 class="text-center">Price: ${value} ETH</h3>
@@ -1258,7 +1258,7 @@ var Cryptokims = {};
                       <h3 class="text-center">Kim: #${result[1]}</h3>
                     </div>
                     <div class="panel-body">
-                      <img onClick="giveModalValueHome(${result[1]})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${result[1]}.png">
+                      <img onClick="giveModalValueHome(${result[1]})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${result[1]}.png">
                       </img>
                     </div>
                     <div class="panel-footer">
@@ -1378,7 +1378,7 @@ var Cryptokims = {};
                 <h3 class="text-center">Kim: #${result[1]}</h3>
               </div>
               <div class="panel-body">
-                <img class="img-responsive center-block" onClick="giveModalValueHome(${result[1]})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${result[1]}.png">
+                <img class="img-responsive center-block" onClick="giveModalValueHome(${result[1]})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${result[1]}.png">
                 </img>
               </div>
             </div>
@@ -1500,7 +1500,7 @@ var Cryptokims = {};
                     <div class="card-header bg-light">
                       Kim # ${kimIndex}
                     </div>
-                    <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo"src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
+                    <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo"src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${kimIndex}.png" alt="Card image cap">
                     <div class="card-body">
                       <p class="card-text">Price: ${sellPriceWei} ETH</p>
                       <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary btn-small center-block" data-toggle="modal" data-target="#centralModalInfo">Purchase</button>
@@ -1516,7 +1516,7 @@ var Cryptokims = {};
                       <div class="card-header bg-light">
                         Kim # ${kimIndex}
                       </div>
-                      <img class="card-img-top" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#centralModalInfo" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
+                      <img class="card-img-top" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#centralModalInfo" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${kimIndex}.png" alt="Card image cap">
                       <div class="card-body">
                         <p class="card-text">Price: ${sellPriceWei} ETH</p>
                         <a href="#" class="btn btn-danger disabled">Kim is not for sale</a>
@@ -1563,7 +1563,7 @@ var Cryptokims = {};
                     <div class="card-header bg-light">
                       Kim # ${kimIndex}
                     </div>
-                    <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo"src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
+                    <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo"src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${kimIndex}.png" alt="Card image cap">
                     <div class="card-body">
                       <p class="card-text">Price: ${sellPriceWei} ETH</p>
                       <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary btn-small center-block" data-toggle="modal" data-target="#centralModalInfo">Purchase</button>
@@ -1579,7 +1579,7 @@ var Cryptokims = {};
                       <div class="card-header bg-light">
                         Kim # ${kimIndex}
                       </div>
-                      <img class="card-img-top" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#centralModalInfo" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
+                      <img class="card-img-top" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#centralModalInfo" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${kimIndex}.png" alt="Card image cap">
                       <div class="card-body">
                         <p class="card-text">Price: ${sellPriceWei} ETH</p>
                         <a href="#" class="btn btn-danger disabled">Kim is not for sale</a>
