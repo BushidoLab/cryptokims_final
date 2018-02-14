@@ -712,6 +712,7 @@ var Cryptokims = {};
   // WORKING
   function kimsForSaleModal(index, value){
     var modal = $('.modal-content');
+    var display_value = value/1000000000000000000;
     console.log(value);
     clearModal();
     modal.append(
@@ -724,7 +725,7 @@ var Cryptokims = {};
       </div>
       <div class="modal-body mx-auto">
       <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${index}.png"></img>
-       <h3 class="text-center">Price: ${value} ETH</h3>
+       <h3 class="text-center">Price: ${display_value} ETH</h3>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Decline</button>
@@ -1170,7 +1171,7 @@ var Cryptokims = {};
         var saleStatus = result[0];
         var kimIndex = result[1]['c'][0];
         var salePrice = result[3];
-        // salePrice = salePrice.toPrecision(6);
+        // salePrice = salePrice.toPrecision(4);
 
         var value = web3.fromWei(salePrice, 'ether');
         // console.log(result[3]);c
@@ -1487,6 +1488,8 @@ var Cryptokims = {};
           var sellPriceWei = web3.fromWei(priceETH, 'ether');
           var blockNum = result[4]['c'][0];
 
+          sellPriceWei = sellPriceWei.toPrecision(4);
+
           Cryptokims.kimContract.tokenToOwner.call(i, function(error,result) {
             if (error) {
                 console.log(error);
@@ -1549,6 +1552,8 @@ var Cryptokims = {};
           var priceETH = result[3];
           var sellPriceWei = web3.fromWei(priceETH, 'ether');
           var blockNum = result[4]['c'][0];
+
+          sellPriceWei = sellPriceWei.toPrecision(4);
 
           Cryptokims.kimContract.tokenToOwner.call(i, function(error,result) {
             if (error) {
