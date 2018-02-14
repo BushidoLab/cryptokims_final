@@ -13,7 +13,7 @@ get '/' do
 end
 
 get '/nometa' do
-  send_file File.join(settings.public_folder, 'noMetaMask.html')
+  send_file File.join(settings.public_folder, 'noMetaMaskInstalled.html')
 end
 
 get '/kimsForSale' do
