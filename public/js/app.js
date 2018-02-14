@@ -1371,6 +1371,7 @@ var Cryptokims = {};
           var kimIndex = result[1];
           var ownerAddress = result[2];
           var priceETH = result[3];
+          var sellPriceWei = web3.fromWei(priceETH, 'ether');
           var blockNum = result[4]['c'][0];
 
           Cryptokims.kimContract.tokenToOwner.call(i, function(error,result) {
@@ -1389,7 +1390,7 @@ var Cryptokims = {};
                         <img class="img-responsive center-block" onClick="giveModalValueHome(${i+amount})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
                       </div>
                       <div class="panel-footer" style="height:60px;">
-                        <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#exampleModalCenter">Purchase</button>
+                        <button onClick="kimsForSaleModal(${kimIndex},${sellPriceWei})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#exampleModalCenter">Purchase</button>
                       </div>
                     </div>
                   </div>
@@ -1437,6 +1438,7 @@ var Cryptokims = {};
           var kimIndex = result[1];
           var ownerAddress = result[2];
           var priceETH = result[3];
+          var sellPriceWei = web3.fromWei(priceETH, 'ether');
           var blockNum = result[4]['c'][0];
 
           Cryptokims.kimContract.tokenToOwner.call(i, function(error,result) {
@@ -1455,7 +1457,7 @@ var Cryptokims = {};
                         <img class="img-responsive center-block" onClick="giveModalValueHome(${i+amount})"  data-toggle="modal" data-target="#exampleModalCenter" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="">
                       </div>
                       <div class="panel-footer" style="height:60px;">
-                        <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#exampleModalCenter">Purchase</button>
+                        <button onClick="kimsForSaleModal(${kimIndex},${sellPriceWei})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#exampleModalCenter">Purchase</button>
                       </div>
                     </div>
                   </div>
