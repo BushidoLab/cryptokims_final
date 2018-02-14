@@ -909,10 +909,11 @@ var Cryptokims = {};
     });
   }
 
+
   // Kevin approved
   // Display a current users kims
   function currentUserKims() {
-    var kimList = $(".current-user-kims");
+    var kimList = $("#current_user_kim_template");
     currentUser = web3.eth.coinbase;
 
     var kimsToLoop;
@@ -937,19 +938,15 @@ var Cryptokims = {};
                 console.log(`You are selling kimIndex # ${kimIndex}`);
                 kimList.append(
                   `
-                  <div class="col" style="float: left;width: 250px;margin: 1em;">
-                    <div class="panel panel-primary">
-                      <div class="panel-heading">
-                        <h3 class="text-center">Kim: #${kimIndex}</h3>
+                    <div class="card text-center" >
+                      <div class="card-header bg-light">
+                        Kim # ${kimIndex}
                       </div>
-                      <div class="panel-body">
-                        <img onClick="giveModalValueHome(${kimIndex})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal"src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png"></img>
-                      </div>
-                      <div class="panel-footer">
-                        <button onClick="cancelKimAuction(${kimIndex})"type="button" class="btn btn-primary center-block" style="margin-top: 9px;">Remove Listing</button>
+                      <img class="card-img-top" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
+                      <div class="card-body">
+                          <button onClick="cancelKimAuction(${kimIndex})"type="button" class="btn btn-primary center-block" style="margin-top: 9px;">Remove Listing</button>
                       </div>
                     </div>
-                  </div>
                   `
                 );
               } else {
@@ -963,18 +960,15 @@ var Cryptokims = {};
                       console.log(sellerAddress2);
                       kimList.append(
                         `
-                        <div class="col" style="float: left;width: 250px;margin: 1em;padding:100px;">
-                          <div class="panel panel-default">
-                            <div class="panel-heading">
-                              <h3 class="text-center">Kim: #${kimIndex}</h3>
+                          <div class="card text-center" >
+                            <div class="card-header bg-light">
+                              Kim # ${kimIndex}
                             </div>
-                            <div class="panel-body">
-                              <img onClick="giveModalValueHome(${kimIndex})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal"src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png"></img>
-                            </div>
-                            <div class="panel-footer"><button onClick="giveModalValue(${kimIndex})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#showKimModal" style="margin-top: 9px;">Sell this Kim!</button>
+                            <img class="card-img-top" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png" alt="Card image cap">
+                            <div class="card-body">
+                              <button onClick="giveModalValue(${kimIndex})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#showKimModal" style="margin-top: 9px;">Sell this Kim!</button>
                             </div>
                           </div>
-                        </div>
                         `
                       );
                     }
@@ -987,6 +981,100 @@ var Cryptokims = {};
       }
     });
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*THE OLD FUNCTION*/
+  // Kevin approved
+  // Display a current users kims
+  // function currentUserKims() {
+  //   var kimList = $(".current-user-kims");
+  //   currentUser = web3.eth.coinbase;
+
+  //   var kimsToLoop;
+  //   Cryptokims.kimContract.kimsCreated(function(error, result) {
+  //     if (error) {
+  //       console.log(error);
+  //     } else {
+  //       kimsToLoop = result.c[0];
+
+
+  //       for (let b = 0; b < kimsToLoop; b++){
+  //         Cryptokims.kimContract.tokenAuction.call(b, function(error,result) {
+  //           if (error) {
+  //             console.log(error);
+  //           } else {
+
+  //             var saleStatus = result[0];
+  //             var sellerAddress = result[2];
+  //             var kimIndex = result[1]['c'][0];
+
+  //             if (sellerAddress === currentUser && saleStatus === true){
+  //               console.log(`You are selling kimIndex # ${kimIndex}`);
+  //               kimList.append(
+  //                 `
+  //                 <div class="col" style="float: left;width: 250px;margin: 1em;">
+  //                   <div class="panel panel-primary">
+  //                     <div class="panel-heading">
+  //                       <h3 class="text-center">Kim: #${kimIndex}</h3>
+  //                     </div>
+  //                     <div class="panel-body">
+  //                       <img onClick="giveModalValueHome(${kimIndex})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal"src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png"></img>
+  //                     </div>
+  //                     <div class="panel-footer">
+  //                       <button onClick="cancelKimAuction(${kimIndex})"type="button" class="btn btn-primary center-block" style="margin-top: 9px;">Remove Listing</button>
+  //                     </div>
+  //                   </div>
+  //                 </div>
+  //                 `
+  //               );
+  //             } else {
+  //               // console.log(`You are not selling kimIndex # ${kimIndex}, but you own it`);
+  //               Cryptokims.kimContract.tokenToOwner(kimIndex, function(error, result){
+  //                 if(error){
+  //                   console.log(error);
+  //                 } else {
+  //                   var sellerAddress2 = result;
+  //                   if (sellerAddress2 === currentUser && saleStatus === false){
+  //                     console.log(sellerAddress2);
+  //                     kimList.append(
+  //                       `
+  //                       <div class="col" style="float: left;width: 250px;margin: 1em;padding:100px;">
+  //                         <div class="panel panel-default">
+  //                           <div class="panel-heading">
+  //                             <h3 class="text-center">Kim: #${kimIndex}</h3>
+  //                           </div>
+  //                           <div class="panel-body">
+  //                             <img onClick="giveModalValueHome(${kimIndex})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal"src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${kimIndex}.png"></img>
+  //                           </div>
+  //                           <div class="panel-footer"><button onClick="giveModalValue(${kimIndex})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#showKimModal" style="margin-top: 9px;">Sell this Kim!</button>
+  //                           </div>
+  //                         </div>
+  //                       </div>
+  //                       `
+  //                     );
+  //                   }
+  //                 }
+  //               });
+  //             }
+  //           }
+  //         });
+  //       }
+  //     }
+  //   });
+  // }
 
   // Kevin approved
   // Cancel kim sale and remove from auction
