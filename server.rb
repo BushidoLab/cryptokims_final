@@ -9,7 +9,7 @@ require 'sinatra'
 # end
 
 get '/' do
-  send_file File.join(settings.public_folder, 'index.html')
+  send_file File.join(settings.public_folder, 'new_home.html')
 end
 
 get '/nometa' do
@@ -26,4 +26,8 @@ end
 
 get '/myKims' do
   send_file File.join(settings.public_folder, 'mykims.html')
+end
+
+get '/test' do
+  send_file File.join(settings.public_folder, 'test.html')
 end
