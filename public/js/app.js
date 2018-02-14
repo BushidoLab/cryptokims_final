@@ -710,7 +710,7 @@ var Cryptokims = {};
     modal.append(
       `
       <div class="modal-header">
-        <h2 class="modal-title" id="sellKimModalLabel">You are about 2 purchase Kim: #${index}</h2>
+        <h2 class="modal-title" id="sellKimModalLabel">You are about to purchase Kim: #${index}</h2>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -794,7 +794,7 @@ var Cryptokims = {};
               var ownerAddress = result[2];
               var priceETH = result[3];
               priceETH = web3.fromWei(priceETH, 'ether');
-              console.log(`price ETH from getAllKims() index:${i}  ${priceETH}`);
+
 
               var blockNum = result[4]['c'][0];
 
@@ -862,7 +862,7 @@ var Cryptokims = {};
         console.log(error);
       } else {
         kimsToLoop = result.c[0];
-        console.log(`kimsToLoop(getAllKimsOnAuction): ${kimsToLoop}`);
+
 
         for (let i = 0; i < kimsToLoop; i++){
           Cryptokims.kimContract.tokenAuction.call(i, function(error,result) {
@@ -923,7 +923,7 @@ var Cryptokims = {};
         console.log(error);
       } else {
         kimsToLoop = result.c[0];
-        console.log(`kimsToLoop(currentUserKims): ${kimsToLoop}`);
+
 
         for (let b = 0; b < kimsToLoop; b++){
           Cryptokims.kimContract.tokenAuction.call(b, function(error,result) {
@@ -1084,15 +1084,13 @@ var Cryptokims = {};
         // salePrice = salePrice.toPrecision(6);
 
         var value = web3.fromWei(salePrice, 'ether');
-        console.log(result[3]);
+        // console.log(result[3]);c
 
         Cryptokims.kimContract.tokenToOwner.call(kimIndex, function(error,result) {
           if (error) {
               console.log(error);
           } else {
             console.log(result);
-            console.log(`suh${kimName}`);
-            console.log(kimIndex);
             var sellerAddress = result;
             modal.append(
               `
@@ -1132,7 +1130,6 @@ var Cryptokims = {};
         console.log(error);
       } else {
         kimsToLoop = result.c[0];
-        console.log(`kimsToLoop(getUserKimsOnSale): ${kimsToLoop}`);
 
         for (let i = 0; i < kimsToLoop; i++){
           Cryptokims.kimContract.tokenAuction.call(i, function(error,result) {
@@ -1203,7 +1200,6 @@ var Cryptokims = {};
   // Side log in pannel for meta mask
   function ethereumPanel(){
     let currentUser = web3.eth.coinbase;
-    console.log(`here is current user ${currentUser}`);
     var ethPanel = $('#ethereum-panel');
 
     if (currentUser == null ){
@@ -1504,8 +1500,7 @@ function kimPagination(){
       var beforeRemainder = totalKims-remainingKims;
 
       totalPages = Math.floor(totalPages);
-      console.log(totalKims);
-      console.log(totalPages);
+
 
       for(var i = 0 ; i < totalPages ; i++){
         paginationTag.append(
@@ -1515,7 +1510,7 @@ function kimPagination(){
         );
         var counter = i+1;
       }
-      console.log(`amount of kims not shown: ${remainingKims}`);
+
       paginationTag.append(
         `
           <li class="page-item"><a class="page-link" onclick="paginateLastKims(${beforeRemainder},${remainingKims});">${counter+1}</a></li>
