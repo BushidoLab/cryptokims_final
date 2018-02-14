@@ -29,42 +29,11 @@
             <!-- <li class="active"><a href="mykims.html">Your Kims</a></li> -->
             <li><a href="kimsForSale.html">Kims For Sale</a></li>
             <li ><a href="searchForKim.html">Search</a></li>
-            <!-- <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li> -->
+
           </ul>
-          <!-- <form class="navbar-form navbar-right" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form> -->
+
           <ul class="nav navbar-nav navbar-right">
 
-
-
-
-
-            <!-- <li><a href="#">Link</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </li> -->
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -76,10 +45,38 @@
             <img class="img-fluid mb-5 d-block mx-auto" src="img/profile.png" alt="">
             <h1 class="mb-0">You don't have <strong><a href"https://metamask.io/">MetaMask</a></strong> installed.</h1>
             <hr class="star-light">
-            <h2 class="font-weight-light mb-0">You can't view any Kims without it!</h2>
+            <h2 class="font-weight-light mb-0">You can only view a select number of Kims without it!</h2>
           </div>
     </header>
 
+    <div class="container-fluid">
+      <div class="kim-list">
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    window.addEventListener('load', function() {
+      console.log("dom loaded");
+
+      let kimList = $('.kim-list');
+      for(let i = 0 ; i < 25 ; i++){
+        kimList.append(
+          `
+          <div class="col" style="float: left;width: 250px;margin: 1em;">
+            <div class="panel panel-primary">
+              <div class="panel-heading text-center"><h3>Kim ID: #${i}</h3></div>
+              <div class="panel-body">
+                <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${i}.png" alt="">
+              </div>
+            </div>
+          </div>
+          `
+        );
+      }
+
+    });
+
+    </script>
 
   </body>
 
