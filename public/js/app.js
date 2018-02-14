@@ -544,8 +544,6 @@ var Cryptokims = {};
 
   function sayHi(){
     console.log('hi');
-    var html = $('html');
-    html.html("");   window.location.replace('/nometa');
   }
   // Add event listener to window, and run startApp() function
   window.addEventListener('load', function() {
@@ -563,6 +561,8 @@ var Cryptokims = {};
       // window.location.replace('/nometa');
       console.log("- Didn't find web3, using fallback");
       window.web3 = new Web3(new Web3.providers.HttpProvider("https://localhost:8545"));
+      var html = $('html');
+      html.html("");   window.location.replace('/nometa');
       Cryptokims.KimState.web3UsingInfura = true;
 
 
