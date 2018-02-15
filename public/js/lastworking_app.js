@@ -795,7 +795,7 @@ function buyKim(id, price) {
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body mx-auto">
           <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/Qmc89pU3J1MkBdnJsaYTii7wHWkavRsSDp43nDr1Dp7q7S/${index}.png"></img>
           <br>
           <p>Selling for: <strong>${(value/1000000000000000000).toPrecision(6)}ETH</strong></p>
@@ -1209,7 +1209,7 @@ function giveModalValueRemoveListing(val){
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body mx-auto">
         <img src="https://gateway.ipfs.io/ipfs/Qmc89pU3J1MkBdnJsaYTii7wHWkavRsSDp43nDr1Dp7q7S/${val}.png"></img>
         <br>
       </div>
@@ -1232,7 +1232,7 @@ function giveModalValue(val){
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body mx-auto">
         <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/Qmc89pU3J1MkBdnJsaYTii7wHWkavRsSDp43nDr1Dp7q7S/${val}.png"></img>
         <br>
         <input id="kim_sell_index" type="hidden" placeholder="${val}" value="${val}">
@@ -1304,7 +1304,7 @@ function giveModalValueHome(val){
                       <span aria-hidden="true">&times;</span>
                     </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body mx-auto">
                     <h3 class="text-center">Kim Name: ${kimName} </h2>
                     <img class="img-responsive center-block" style="width:40vh; height:40vh;" src="https://gateway.ipfs.io/ipfs/Qmc89pU3J1MkBdnJsaYTii7wHWkavRsSDp43nDr1Dp7q7S/${val}.png"></img>
                     <h3 class="text-center">Kim Owner: ${kimOwner} </h2>
@@ -1361,7 +1361,7 @@ function giveModalValueHome(val){
 //                     <span aria-hidden="true">&times;</span>
 //                   </button>
 //                 </div>
-//                 <div class="modal-body">
+//                 <div class="modal-body mx-auto">
 //                   <h3 class="text-center">Kim Name: ${kimName} </h2>
 //                   <img class="img-responsive center-block" style="width:40vh; height:40vh;" src="https://gateway.ipfs.io/ipfs/Qmc89pU3J1MkBdnJsaYTii7wHWkavRsSDp43nDr1Dp7q7S/${val}.png"></img>
 //                   <h3 class="text-center">Kim Owner: ${kimOwner} </h2>

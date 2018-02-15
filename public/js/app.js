@@ -712,6 +712,7 @@ var Cryptokims = {};
   // WORKING
   function kimsForSaleModal(index, value){
     var modal = $('.modal-content');
+    var display_value = value/1000000000000000000;
     console.log(value);
     clearModal();
     modal.append(
@@ -722,9 +723,15 @@ var Cryptokims = {};
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+<<<<<<< HEAD
       <div class="modal-body">
       <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${index}.png"></img>
        <h3 class="text-center">Price: ${value} ETH</h3>
+=======
+      <div class="modal-body mx-auto">
+      <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${index}.png"></img>
+       <h3 class="text-center">Price: ${display_value} ETH</h3>
+>>>>>>> 4d9279589417d01709383840410a949df200534f
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Decline</button>
@@ -1103,8 +1110,13 @@ var Cryptokims = {};
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
+<<<<<<< HEAD
         <div class="modal-body">
           <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${val}.png"></img>
+=======
+        <div class="modal-body mx-auto">
+          <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
+>>>>>>> 4d9279589417d01709383840410a949df200534f
           <br>
         </div>
         <div class="modal-footer">
@@ -1130,7 +1142,7 @@ var Cryptokims = {};
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body mx-auto">
         <form>
           <div class="form-group">
             <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${val}.png"></img>
@@ -1170,7 +1182,7 @@ var Cryptokims = {};
         var saleStatus = result[0];
         var kimIndex = result[1]['c'][0];
         var salePrice = result[3];
-        // salePrice = salePrice.toPrecision(6);
+        // salePrice = salePrice.toPrecision(4);
 
         var value = web3.fromWei(salePrice, 'ether');
         // console.log(result[3]);c
@@ -1191,7 +1203,7 @@ var Cryptokims = {};
             //       <span aria-hidden="true">&times;</span>
             //     </button>
             //   </div>
-            //   <div class="modal-body">
+            //   <div class="modal-body mx-auto">
             //     <h3 class="text-center"></h2>
             //     <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${val}.png"></img>
             //     <h3 class="text-center">Kim Owner: ${sellerAddress} </h2>
@@ -1212,8 +1224,13 @@ var Cryptokims = {};
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
+<<<<<<< HEAD
             <div class="modal-body">
             <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${val}.png"></img>
+=======
+            <div class="modal-body mx-auto">
+            <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
+>>>>>>> 4d9279589417d01709383840410a949df200534f
              <h3 class="text-center">Kim Owner: ${sellerAddress} </h2>
              <h3 class="text-center">Sale Status: ${saleStatus}</h3>
              <h3 class="text-center">Price: ${value} ETH</h3>
@@ -1487,6 +1504,8 @@ var Cryptokims = {};
           var sellPriceWei = web3.fromWei(priceETH, 'ether');
           var blockNum = result[4]['c'][0];
 
+          sellPriceWei = sellPriceWei.toPrecision(4);
+
           Cryptokims.kimContract.tokenToOwner.call(i, function(error,result) {
             if (error) {
                 console.log(error);
@@ -1549,6 +1568,8 @@ var Cryptokims = {};
           var priceETH = result[3];
           var sellPriceWei = web3.fromWei(priceETH, 'ether');
           var blockNum = result[4]['c'][0];
+
+          sellPriceWei = sellPriceWei.toPrecision(4);
 
           Cryptokims.kimContract.tokenToOwner.call(i, function(error,result) {
             if (error) {
