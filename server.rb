@@ -11,6 +11,9 @@ require 'sinatra'
 # get '/' do
 #   send_file File.join(settings.public_folder, 'new_home.html')
 # end
+get '/' do
+  send_file File.join(settings.public_folder, 'index.html')
+end
 
 get '/nometa' do
   send_file File.join(settings.public_folder, 'noMetaMaskInstalled.html')
@@ -29,10 +32,7 @@ get '/myKims' do
 end
 
 
-get '/' do
-  send_file File.join(settings.public_folder, 'landing.html')
-end
 
-get '/test' do
-  send_file File.join(settings.public_folder, 'landing_test.html')
+get '/marketplace' do
+  send_file File.join(settings.public_folder, 'marketplace.html')
 end
