@@ -822,7 +822,7 @@ var Cryptokims = {};
                           <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo"src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${kimIndex}.png" alt="Card image cap">
                           <div class="card-body">
                             <p class="card-text">Price: ${priceETH} ETH</p>
-                            <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary btn-small center-block" data-toggle="modal" data-target="#centralModalInfo">Purchase</button>
+                            <button id="getAllKimsFunction" onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary btn-small center-block" data-toggle="modal" data-target="#centralModalInfo">Purchase</button>
                           </div>
                         </div>
                         `
@@ -901,7 +901,7 @@ var Cryptokims = {};
                               <p class="text-center" style="overflow:hidden">
                                 price: ${priceETH} eth
                               </p>
-                              <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#exampleModalCenter">Purchase</button>
+                              <button id="getAllKimsOnAuctionFunction" onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#exampleModalCenter">Purchase</button>
                             </div>
                           </div>
                         </div>
@@ -1504,7 +1504,7 @@ var Cryptokims = {};
                     <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo"src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${kimIndex}.png" alt="Card image cap">
                     <div class="card-body">
                       <p class="card-text">Price: ${sellPriceEth} ETH</p>
-                      <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary btn-small center-block" data-toggle="modal" data-target="#centralModalInfo">Purchase</button>
+                      <button id="paginateKimsFunction" onClick="kimsForSaleModal(${kimIndex},${sellPriceEth})" type="button" class="btn btn-primary btn-small center-block" data-toggle="modal" data-target="#centralModalInfo">Purchase</button>
                     </div>
                   </div>
                   `
@@ -1569,7 +1569,7 @@ var Cryptokims = {};
                     <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo"src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${kimIndex}.png" alt="Card image cap">
                     <div class="card-body">
                       <p class="card-text">Price: ${sellPriceWei} ETH</p>
-                      <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary btn-small center-block" data-toggle="modal" data-target="#centralModalInfo">Purchase</button>
+                      <button id="paginateLastKimsFunction" onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary btn-small center-block" data-toggle="modal" data-target="#centralModalInfo">Purchase</button>
                     </div>
                   </div>
                   `
