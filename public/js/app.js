@@ -723,15 +723,9 @@ var Cryptokims = {};
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-<<<<<<< HEAD
-      <div class="modal-body">
-      <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${index}.png"></img>
-       <h3 class="text-center">Price: ${value} ETH</h3>
-=======
       <div class="modal-body mx-auto">
       <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${index}.png"></img>
        <h3 class="text-center">Price: ${display_value} ETH</h3>
->>>>>>> 4d9279589417d01709383840410a949df200534f
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Decline</button>
@@ -1110,13 +1104,8 @@ var Cryptokims = {};
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-<<<<<<< HEAD
-        <div class="modal-body">
-          <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${val}.png"></img>
-=======
         <div class="modal-body mx-auto">
           <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
->>>>>>> 4d9279589417d01709383840410a949df200534f
           <br>
         </div>
         <div class="modal-footer">
@@ -1224,13 +1213,8 @@ var Cryptokims = {};
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-<<<<<<< HEAD
-            <div class="modal-body">
-            <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${val}.png"></img>
-=======
             <div class="modal-body mx-auto">
             <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
->>>>>>> 4d9279589417d01709383840410a949df200534f
              <h3 class="text-center">Kim Owner: ${sellerAddress} </h2>
              <h3 class="text-center">Sale Status: ${saleStatus}</h3>
              <h3 class="text-center">Price: ${value} ETH</h3>
