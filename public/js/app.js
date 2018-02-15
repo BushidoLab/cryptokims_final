@@ -822,26 +822,26 @@ var Cryptokims = {};
 
 
 
-    var kimCardDeck = $('#kim_template')
-    Cryptokims.kimContract.tokenAuction(i, function(error, result) {
-    if (error) {
-    console.log(error);
-    } else {
-      var saleStatus = result[0];
-      var kimIndex = result[1];
-      var ownerAddress = result[2];
-      var priceETH = web3.fromWei(result[3], 'ether');
-      }
-    });
+    // var kimCardDeck = $('#kim_template')
+    // Cryptokims.kimContract.tokenAuction(i, function(error, result) {
+    // if (error) {
+    // console.log(error);
+    // } else {
+    //   var saleStatus = result[0];
+    //   var kimIndex = result[1];
+    //   var ownerAddress = result[2];
+    //   var priceETH = web3.fromWei(result[3], 'ether');
+    //   }
+    // });
 
 
 
-    function Tree(name) {
-      this.name = name;
-    }
+    // function Tree(name) {
+    //   this.name = name;
+    // }
 
-    var theTree = new Tree('Redwood');
-    console.log('theTree.constructor is ' + theTree.constructor);
+    // var theTree = new Tree('Redwood');
+    // console.log('theTree.constructor is ' + theTree.constructor);
 
 
 
@@ -890,117 +890,9 @@ var Cryptokims = {};
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  kimCardDeck.append(
-                    `
-                    <div class="card text-center" >
-                    <div class="card-header bg-light">
-                    Kim # ${kimIndex}
-                    </div>
-                    <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo"src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${kimIndex}.png" alt="Card image cap">
-                    <div class="card-body">
-                    <p class="card-text">Price: ${priceETH} ETH</p>
-                    <button id="getAllKimsFunction" onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary btn-small center-block" data-toggle="modal" data-target="#centralModalInfo">Purchase</button>
-                    </div>
-                    </div>
-                    `)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//       <div class="modal-body">
+//       <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${index}.png"></img>
+// >>>>>>> 10c519774cf3fd1e194f88455915508fc59a22d0
 
 
 
@@ -1031,7 +923,7 @@ var Cryptokims = {};
         </button>
       </div>
       <div class="modal-body mx-auto">
-      <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${index}.png"></img>
+      <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${index}.png"></img>
        <h3 class="text-center">Price: ${value} ETH</h3>
       </div>
       <div class="modal-footer">
@@ -1382,6 +1274,18 @@ var Cryptokims = {};
   //   });
   // }
 
+
+
+
+// <<<<<<< HEAD
+//         <div class="modal-body mx-auto">
+//           <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${val}.png"></img>
+// =======
+
+
+
+
+
   // Kevin approved
   // Cancel kim sale and remove from auction
   // WORKING
@@ -1411,8 +1315,8 @@ var Cryptokims = {};
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body mx-auto">
-          <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
+        <div class="modal-body">
+          <img class="img-responsive center-block" style="height:400px; width:373px;" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${val}.png"></img>
           <br>
         </div>
         <div class="modal-footer">
@@ -1512,6 +1416,17 @@ var Cryptokims = {};
             //   `
             // );
 
+
+
+// <<<<<<< HEAD
+//             <div class="modal-body mx-auto">
+//             <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${val}.png"></img>
+// =======
+
+
+
+
+
             modal.append(
             `
             <div class="modal-header">
@@ -1521,7 +1436,7 @@ var Cryptokims = {};
               </button>
             </div>
             <div class="modal-body mx-auto">
-            <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${val}.png"></img>
+            <img class="img-responsive center-block" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${val}.png"></img>
              <h3 class="text-center">Kim Owner: ${sellerAddress} </h2>
              <h3 class="text-center">Sale Status: ${saleStatus}</h3>
              <h3 class="text-center">Price: ${value} ETH</h3>
@@ -1828,7 +1743,7 @@ var Cryptokims = {};
                       </div>
                       <img class="card-img-top" onClick="giveModalValueHome(${i})"  data-toggle="modal" data-target="#centralModalInfo" src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${kimIndex}.png" alt="Card image cap">
                       <div class="card-body">
-                        <p class="card-text">Price: ${sellPriceWei} ETH</p>
+                        <p class="card-text">Price: ${sellPriceEth} ETH</p>
                         <a href="#" class="btn btn-danger disabled">Kim is not for sale</a>
                       </div>
                     </div>

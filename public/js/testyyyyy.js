@@ -35,7 +35,7 @@ Cryptokims.kimContract.kimsOnSale.call(b, function(error, result){
               <h3 class="text-center">Kim: #${b}</h3>
             </div>
             <div class="panel-body">
-              <img onClick="giveModalValueHome(${b})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal"src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${b}.png"></img>
+              <img onClick="giveModalValueHome(${b})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal"src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${b}.png"></img>
             </div>
             <div class="panel-footer">
               <button type="button" class="btn btn-primary center-block" style="margin-top: 9px;">Button</button>
@@ -56,7 +56,7 @@ Cryptokims.kimContract.kimsOnSale.call(b, function(error, result){
               <h3 class="text-center">Kim: #${b}</h3>
             </div>
             <div class="panel-body">
-              <img onClick="giveModalValueHome(${b})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal"src="https://gateway.ipfs.io/ipfs/QmNmCUgvsDKzQiqNFTyQR9cBFQyoJ1iG5p35eLJDorLAER/${b}.png"></img>
+              <img onClick="giveModalValueHome(${b})" class="img-responsive center-block" data-toggle="modal" data-target="#showKimModal"src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${b}.png"></img>
             </div>
             <div class="panel-footer"><button onClick="giveModalValue(${b})" type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#showKimModal" style="margin-top: 9px;">Sell this Kim!</button>
             </div>
