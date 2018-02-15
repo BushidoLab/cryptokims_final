@@ -1483,10 +1483,10 @@ var Cryptokims = {};
           var kimIndex = result[1];
           var ownerAddress = result[2];
           var priceETH = result[3];
-          var sellPriceWei = web3.fromWei(priceETH, 'ether');
+          var sellPriceEth = web3.fromWei(priceETH, 'ether');
           var blockNum = result[4]['c'][0];
 
-          sellPriceWei = sellPriceWei.toPrecision(4);
+          // sellPriceWei = sellPriceWei.toPrecision(4);
 
           Cryptokims.kimContract.tokenToOwner.call(i, function(error,result) {
             if (error) {
@@ -1503,7 +1503,7 @@ var Cryptokims = {};
                     </div>
                     <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo"src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${kimIndex}.png" alt="Card image cap">
                     <div class="card-body">
-                      <p class="card-text">Price: ${sellPriceWei} ETH</p>
+                      <p class="card-text">Price: ${sellPriceEth} ETH</p>
                       <button onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary btn-small center-block" data-toggle="modal" data-target="#centralModalInfo">Purchase</button>
                     </div>
                   </div>
