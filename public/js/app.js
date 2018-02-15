@@ -562,7 +562,7 @@ var Cryptokims = {};
       console.log("- Didn't find web3, using fallback");
       window.web3 = new Web3(new Web3.providers.HttpProvider("https://localhost:8545"));
       var html = $('html');
-      html.html("");   window.location.replace('/');
+      // html.html("");   window.location.replace('/');
       Cryptokims.KimState.web3UsingInfura = true;
 
 
