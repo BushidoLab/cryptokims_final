@@ -542,9 +542,6 @@ var Cryptokims = {};
 
 
 
-  function sayHi(){
-    console.log('hi');
-  }
   // Add event listener to window, and run startApp() function
   window.addEventListener('load', function() {
     console.log("LOAD EVENT");
@@ -598,7 +595,7 @@ var Cryptokims = {};
           if (!error) {
             let v = JSON.parse(JSON.stringify(result))['transactionHash'];
           } else {
-            console.log(error);
+            // console.log(error);
           }
       });
 
@@ -662,13 +659,13 @@ var Cryptokims = {};
     let kim_sell_price_wei = web3.toWei(kim_sell_price, 'ether');
     let currentUser = web3.eth.coinbase;
 
-    console.log(`Requesting sale on kim #${kim_sell_id} for ${kim_sell_price} ether`);
+    // console.log(`Requesting sale on kim #${kim_sell_id} for ${kim_sell_price} ether`);
 
     Cryptokims.kimContract.sellToken.sendTransaction(kim_sell_id, kim_sell_price_wei, function(error, result) {
       if (error) {
-        console.log(error);
+        // console.log(error);
       } else {
-        console.log(`Sale confirmed, transaction hash: ${result}`);
+        // console.log(`Sale confirmed, transaction hash: ${result}`);
       }
     });
   }
@@ -687,10 +684,10 @@ var Cryptokims = {};
 
     let currentUser = web3.eth.coinbase;
 
-    console.log(`BUY KIM ID: ${kim_buy_id}`);
-    console.log(`BUY KIM PRICE: ${kim_buy_price}`);
+    // console.log(`BUY KIM ID: ${kim_buy_id}`);
+    // console.log(`BUY KIM PRICE: ${kim_buy_price}`);
 
-    console.log(`Requesting purchase on kim: #${kim_buy_id} for ${kim_buy_price} wei`);
+    // console.log(`Requesting purchase on kim: #${kim_buy_id} for ${kim_buy_price} wei`);
 
     let txnObject = {
       from: currentUser,
@@ -702,9 +699,9 @@ var Cryptokims = {};
     Cryptokims.kimContract.buyKim.sendTransaction(kim_buy_id, txnObject, function(error, result){
       if (error) {
         // console.log(error);
-        console.log('rejected transaction');
+        // console.log('rejected transaction');
       } else {
-        console.log(`Purchase confirmed, transaction hash: ${result}`);
+        // console.log(`Purchase confirmed, transaction hash: ${result}`);
         ga('send', 'event', 'order_placed', 'buy_kim');
         //add confirmation that kim was purchased and display it to the user
       }
@@ -825,10 +822,26 @@ var Cryptokims = {};
 
 
 
+    var kimCardDeck = $('#kim_template')
+    Cryptokims.kimContract.tokenAuction(i, function(error, result) {
+    if (error) {
+    console.log(error);
+    } else {
+      var saleStatus = result[0];
+      var kimIndex = result[1];
+      var ownerAddress = result[2];
+      var priceETH = web3.fromWei(result[3], 'ether');
+      }
+    });
 
 
 
+    function Tree(name) {
+      this.name = name;
+    }
 
+    var theTree = new Tree('Redwood');
+    console.log('theTree.constructor is ' + theTree.constructor);
 
 
 
@@ -874,6 +887,38 @@ var Cryptokims = {};
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  kimCardDeck.append(
+                    `
+                    <div class="card text-center" >
+                    <div class="card-header bg-light">
+                    Kim # ${kimIndex}
+                    </div>
+                    <img class="card-img-top" onClick="giveModalValueHome(${kimIndex})"  data-toggle="modal" data-target="#centralModalInfo"src="https://gateway.ipfs.io/ipfs/QmZLtHgoMrDGbkrAKJyv79SAwNNnZTgt4ANMnzt98EBZ5q/${kimIndex}.png" alt="Card image cap">
+                    <div class="card-body">
+                    <p class="card-text">Price: ${priceETH} ETH</p>
+                    <button id="getAllKimsFunction" onClick="kimsForSaleModal(${kimIndex},${priceETH})" type="button" class="btn btn-primary btn-small center-block" data-toggle="modal" data-target="#centralModalInfo">Purchase</button>
+                    </div>
+                    </div>
+                    `)
 
 
 
@@ -975,7 +1020,7 @@ var Cryptokims = {};
   function kimsForSaleModal(index, value){
     var modal = $('.modal-content');
     // var display_value = value/1000000000000000000;
-    console.log(value);
+    // console.log(value);
     clearModal();
     modal.append(
       `
@@ -1006,10 +1051,10 @@ var Cryptokims = {};
 
     Cryptokims.kimContract.kimsCreated(function(error, result) {
       if (error) {
-        console.log(error);
+        // console.log(error);
       } else {
         totalKims = result;
-        console.log(`Current total Kims: ${result}`);
+        // console.log(`Current total Kims: ${result}`);
         totalKimsDisplay.append(
           `
           <a>Total Kims: <strong>${totalKims}</strong></a>
@@ -1028,7 +1073,7 @@ var Cryptokims = {};
     var totalKimsDisplay = $('#total-kims-on-auction');
     Cryptokims.kimContract.kimsOnAuction(function(error, result) {
       if (error) {
-        console.log(error);
+        // console.log(error);
       } else {
         totalKims = result;
         totalKimsDisplay.append(
@@ -1052,13 +1097,13 @@ var Cryptokims = {};
     var kimCardDeck = $('#kim_template')
     Cryptokims.kimContract.kimsCreated(function(error, result) {
       if (error) {
-        console.log(error);
+        // console.log(error);
       } else {
         kimsToLoop = result.c[0];
         for (let i = 0; i < 24; i++){
           Cryptokims.kimContract.tokenAuction(i, function(error, result) {
             if (error) {
-              console.log(error);
+              // console.log(error);
             } else {
               var saleStatus = result[0];
               var kimIndex = result[1];
@@ -1066,13 +1111,13 @@ var Cryptokims = {};
               var priceETH = result[3];
 
               priceETH = web3.fromWei(priceETH, 'ether');
-              console.log('hey'+priceETH);
+              // console.log('hey'+priceETH);
 
               var blockNum = result[4]['c'][0];
 
               Cryptokims.kimContract.tokenToOwner.call(i, function(error,result) {
                 if (error) {
-                    console.log(error);
+                    // console.log(error);
                 } else {
                   // CREATE THE OBJECTS IN A SET OF 4 CARD DECK
                     // console.log(`KIMINDEX: SALE STATUS ${saleStatus}. INDEX ${kimIndex}, ownerADDRESS ${ownerAddress}, blockNumber: ${blockNum}`);
@@ -1130,7 +1175,7 @@ var Cryptokims = {};
     let kimsToLoop;
     Cryptokims.kimContract.kimsCreated(function(error, result) {
       if (error) {
-        console.log(error);
+        // console.log(error);
       } else {
         kimsToLoop = result.c[0];
 
@@ -1138,7 +1183,7 @@ var Cryptokims = {};
         for (let i = 0; i < kimsToLoop; i++){
           Cryptokims.kimContract.tokenAuction.call(i, function(error,result) {
             if (error) {
-              console.log(error);
+              // console.log(error);
             } else {
               if (result[0] === true){
 
@@ -1152,7 +1197,7 @@ var Cryptokims = {};
 
                 Cryptokims.kimContract.tokenToOwner.call(i, function(error,result) {
                   if (error) {
-                      console.log(error);
+                      // console.log(error);
                   } else {
                     if (saleStatus === true){
                       kimList.append(
@@ -1193,7 +1238,7 @@ var Cryptokims = {};
     var kimsToLoop;
     Cryptokims.kimContract.kimsCreated(function(error, result) {
       if (error) {
-        console.log(error);
+        // console.log(error);
       } else {
         kimsToLoop = result.c[0];
 
@@ -1201,7 +1246,7 @@ var Cryptokims = {};
         for (let b = 0; b < kimsToLoop; b++){
           Cryptokims.kimContract.tokenAuction.call(b, function(error,result) {
             if (error) {
-              console.log(error);
+              // console.log(error);
             } else {
 
               var saleStatus = result[0];
@@ -1227,7 +1272,7 @@ var Cryptokims = {};
                 // console.log(`You are not selling kimIndex # ${kimIndex}, but you own it`);
                 Cryptokims.kimContract.tokenToOwner(kimIndex, function(error, result){
                   if(error){
-                    console.log(error);
+                    // console.log(error);
                   } else {
                     var sellerAddress2 = result;
                     if (sellerAddress2 === currentUser && saleStatus === false){
@@ -1275,7 +1320,7 @@ var Cryptokims = {};
   //       for (let b = 0; b < kimsToLoop; b++){
   //         Cryptokims.kimContract.tokenAuction.call(b, function(error,result) {
   //           if (error) {
-  //             console.log(error);
+              // console.log(error);
   //           } else {
 
   //             var saleStatus = result[0];
@@ -1345,7 +1390,7 @@ var Cryptokims = {};
 
     Cryptokims.kimContract.cancelKimAuction.sendTransaction(kimToRemove, function(error,result){
       if(error){
-        console.log(error);
+        // console.log(error);
       } else {
         console.log(`result from cancelKimAuction${result}`);
       }
@@ -1426,7 +1471,7 @@ var Cryptokims = {};
 
     Cryptokims.kimContract.tokenAuction(val, function(error, result) {
       if (error) {
-        console.log(error);
+        // console.log(error);
       } else
       {
         var kimName = result;
@@ -1440,7 +1485,7 @@ var Cryptokims = {};
 
         Cryptokims.kimContract.tokenToOwner.call(kimIndex, function(error,result) {
           if (error) {
-              console.log(error);
+              // console.log(error);
           } else {
             console.log(result);
             var sellerAddress = result;
@@ -1503,14 +1548,14 @@ var Cryptokims = {};
 
     Cryptokims.kimContract.kimsCreated(function(error, result) {
       if (error) {
-        console.log(error);
+        // console.log(error);
       } else {
         kimsToLoop = result.c[0];
 
         for (let i = 0; i < kimsToLoop; i++){
           Cryptokims.kimContract.tokenAuction.call(i, function(error,result) {
             if (error) {
-              console.log(error);
+              // console.log(error);
             } else {
               if (result[0] === true && result[2] === currentOwner)
               kimList.append(
@@ -1621,7 +1666,7 @@ var Cryptokims = {};
 
     Cryptokims.kimContract.tokenAuction.call(searchQuery, function(error,result) {
       if (error) {
-        // console.log(error);
+        console.log(error);
         console.log('error in get all kims probably wrong input');
       } else {
         kimName = result;
@@ -1670,9 +1715,9 @@ var Cryptokims = {};
   let currentUser = web3.eth.coinbase;
   Cryptokims.kimContract.pendingWithdrawals(currentUser, function(error, result){
     if (error) {
-      console.log(error);
+      // console.log(error);
     } else {
-      console.log(error);
+      // console.log(error);
     }
   })
   }
@@ -1721,7 +1766,7 @@ var Cryptokims = {};
       if(!error){
         console.log(result);
       } else {
-        console.log(error);
+        // console.log(error);
       }
     });
   }
@@ -1741,7 +1786,7 @@ var Cryptokims = {};
     for (let i = 0; i < kimsToLoop; i++){
       Cryptokims.kimContract.tokenAuction((i+amount), function(error, result) {
         if (error) {
-          console.log(error);
+          // console.log(error);
         } else {
           var saleStatus = result[0];
           var kimIndex = result[1];
@@ -1754,7 +1799,7 @@ var Cryptokims = {};
 
           Cryptokims.kimContract.tokenToOwner.call(i, function(error,result) {
             if (error) {
-                console.log(error);
+                // console.log(error);
             } else {
 
               // console.log(`KIMINDEX: SALE STATUS ${saleStatus}. INDEX ${kimIndex}, ownerADDRESS ${ownerAddress}, blockNumber: ${blockNum}`);
@@ -1806,7 +1851,7 @@ var Cryptokims = {};
     for (let i = 0; i < remainder; i++){
       Cryptokims.kimContract.tokenAuction((i+amount), function(error, result) {
         if (error) {
-          console.log(error);
+          // console.log(error);
         } else {
           var saleStatus = result[0];
           var kimIndex = result[1];
@@ -1819,7 +1864,7 @@ var Cryptokims = {};
 
           Cryptokims.kimContract.tokenToOwner.call(i, function(error,result) {
             if (error) {
-                console.log(error);
+                // console.log(error);
             } else {
 
               // console.log(`KIMINDEX: SALE STATUS ${saleStatus}. INDEX ${kimIndex}, ownerADDRESS ${ownerAddress}, blockNumber: ${blockNum}`);
@@ -1868,7 +1913,7 @@ function kimPagination(){
 
   Cryptokims.kimContract.kimsCreated(function(error, result) {
     if (error) {
-      console.log(error);
+      // console.log(error);
     } else {
       var totalKims = result.c[0];
       var totalPages = totalKims/24
