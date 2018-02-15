@@ -801,7 +801,7 @@ var Cryptokims = {};
               var ownerAddress = result[2];
               var priceETH = result[3];
 
-              priceETH = web3.fromWei(priceETH, 'ether');
+              priceETH = Math.round(web3.fromWei(priceETH, 'ether'));
               console.log('hey'+priceETH);
 
               var blockNum = result[4]['c'][0];
