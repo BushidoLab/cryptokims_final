@@ -556,19 +556,17 @@ var Cryptokims = {};
       // window.web3 = new Web3(web3.currentProvider);
       web3 = new Web3(web3.currentProvider);
       window.web3 = web3;
+      startApp();
+      Cryptokims.KimState.web3Queried = true;
     } else {
       // sayHi();
       // window.location.replace('/nometa');
       console.log("- Didn't find web3, using fallback");
-      window.web3 = new Web3(new Web3.providers.HttpProvider("https://localhost:8545"));
+      // window.web3 = new Web3(new Web3.providers.HttpProvider("https://localhost:8545"));
       var html = $('html');
       // html.html("");   window.location.replace('/');
-      Cryptokims.KimState.web3UsingInfura = true;
-
-
+      // Cryptokims.KimState.web3UsingInfura = true;
     }
-    Cryptokims.KimState.web3Queried = true;
-    startApp();
   });
 
   // Start app function, runs all the functions necessary, and connects to web3.
