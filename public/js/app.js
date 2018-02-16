@@ -1824,7 +1824,9 @@ var Cryptokims = {};
   }
 
 function kimPagination(){
-  var paginationTag = $('.pagination');
+  // var paginationTag = $('.pagination');
+  // var paginationTag = $('#kim_pagination');
+  // kim_pagination
 
   Cryptokims.kimContract.kimsCreated(function(error, result) {
     if (error) {
@@ -1834,14 +1836,14 @@ function kimPagination(){
       var totalPages = totalKims/24
       var remainingKims = totalKims%24;
       var beforeRemainder = totalKims-remainingKims;
-
+      var paginationTag = $("#kim_pagination");
       totalPages = Math.floor(totalPages);
 
 
       for(var i = 0 ; i < totalPages ; i++){
         paginationTag.append(
           `
-            <li class="page-item"><a class="page-link" onclick="paginateKims(${i*24});">${i+1}</a></li>
+            <li class="nav-item"><a class="page-link round" onclick="paginateKims(${i*24}); speak();">${i+1}</a></li>
           `
         );
         var counter = i+1;
@@ -1849,9 +1851,10 @@ function kimPagination(){
 
       paginationTag.append(
         `
-          <li class="page-item"><a class="page-link" onclick="paginateLastKims(${beforeRemainder},${remainingKims});">${counter+1}</a></li>
+          <li class="nav-item"><a class="page-link" onclick="paginateLastKims(${beforeRemainder},${remainingKims});">${counter+1}</a></li>
         `
       );
     }
   });
 }
+
