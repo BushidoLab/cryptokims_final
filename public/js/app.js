@@ -691,7 +691,7 @@ var Cryptokims = {};
 
     let txnObject = {
       from: currentUser,
-      gas: '4000000',
+      gas: '400000000',
       value: kim_buy_price
     };
 
